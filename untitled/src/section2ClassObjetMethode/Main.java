@@ -6,7 +6,9 @@ import java.time.LocalDate;
 
 
 
-
+/**
+ * Section 2 - 10. Object Orientation
+ */
 public class Main {
 
     static private Compagny compagny = new Compagny();
@@ -17,23 +19,28 @@ public class Main {
 
 
 
-
+    //** Ctrl N => Racourci Navigation = Tape le nom de la class ou on veut aller
+    //** Ctrl Shift F10  => Racourci lance Run
     public static void main(String[] args) {
 
+        //** sout => racourcie pour println()
         System.out.println("Hello world!");
 
 
+
+        //10.  Make, générer une instance du concept class Person pour pouvoir l'utiliser
         Person karl = new Person("Karl", "Gavillot", LocalDate.of(1973, 02, 16));
         Person anne = new Person("Anne", "Inconnu", LocalDate.of(1984, 8, 15));
 
-        karl.setSpouse(anne);
+        karl.setSpouse(anne); //10. dit moi qu'elle est l'épouse de karl
 
+        //10. il génére un chien => instancie la class Dog
         Dog bababar = new Dog("Babar", LocalDate.of(2000, 3, 12));
 
-        karl.setPet(bababar);
-        bababar.bark();
+        karl.setPet(bababar); //10. Dit moi qui est l'animal de compagnie de karl
+        bababar.bark(); //10. il fait aboyer bababar (comportement de Dog disponible)
 
-        System.out.println(karl);
+        System.out.println(karl); //10. il faut mettre les toString() sur les class impliqué pour affichage si non juste adresse de objet jarl
         System.out.println(compagny);
 
 

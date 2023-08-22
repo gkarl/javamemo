@@ -1,5 +1,8 @@
 package section2ClassObjetMethode;
 
+/**
+ * Section 2 - 10. Object Orientation
+ */
 public class Address {
 
     private String Address;
@@ -7,6 +10,7 @@ public class Address {
     private String city;
     private String state;
 
+    //** Alt Insert => Racourci ouvrir génerator => constructor | getter setter | toString()
     public Address(String address, String city, String state) {
         Address = address;
         this.city = city;

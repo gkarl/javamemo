@@ -2,6 +2,10 @@ package section2ClassObjetMethode;
 
 import java.time.LocalDate;
 
+
+/**
+ * Section 2 - 10. Object Orientation
+ */
 public class Person {
 
     private final double PI = 3.14;
@@ -12,11 +16,11 @@ public class Person {
 
     private LocalDate dob;
 
-    private Address address;
+    private Address address; //10. je doit creer une class pour définir le concept d'une addresse
 
-    private Pet pet;
+    private Pet pet;  //10. une personne peut avoir un animal de compagnie
 
-    private Person spouse;
+    private Person spouse;  //10. une épouse est une Person
 
 
     public Person() {
@@ -77,6 +81,7 @@ public class Person {
         this.spouse = spouse;
     }
 
+    //10. il faut rafouter cette methode pour voire s'afficher correctement print() d'une instance et pas juste l'addresse en mémoire de l'objet
     @Override
     public String toString() {
         return "section2ClassObjetMethode.Person{" +

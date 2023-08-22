@@ -2,13 +2,16 @@ package section2ClassObjetMethode;
 
 import java.time.LocalDate;
 
+/**
+ * Section 2 - 10. Object Orientation
+ */
 public class Pet extends Object{
 
     private String name;
 
     private LocalDate dob;
 
-    public Pet() {
+    public Pet() {  //10. il a du rajouter ce constructeur vide pour eviter une erreur Dog extend Pet
     }
 
     public Pet(String name, LocalDate dob) {
