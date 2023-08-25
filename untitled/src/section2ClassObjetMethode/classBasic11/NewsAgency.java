@@ -1,7 +1,7 @@
-package section2ClassObjetMethode.ClassBasic11;
+package section2ClassObjetMethode.classBasic11;
 
-import section2ClassObjetMethode.ClassBasic11.business11.Compagny;
-/*import section2ClassObjetMethode.ClassBasic11.business11.FactoryWorker;*/
+import section2ClassObjetMethode.classBasic11.business11.Compagny;
+/*import section2ClassObjetMethode.classBasic11.business11.FactoryWorker;*/
 
 /**
  * Section 2 - 11. Class Basics

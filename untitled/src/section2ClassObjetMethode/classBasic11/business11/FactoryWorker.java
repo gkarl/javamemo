@@ -1,4 +1,4 @@
-package section2ClassObjetMethode.ClassBasic11.business11;
+package section2ClassObjetMethode.classBasic11.business11;
 
 /**
  * Section 2 - 11. Class Basics

@@ -1,6 +1,6 @@
 package section2ClassObjetMethode;
 
-import section2ClassObjetMethode.ClassBasic11.business11.Compagny;
+import section2ClassObjetMethode.classBasic11.business11.Compagny;
 
 import java.time.LocalDate;
 

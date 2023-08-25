@@ -1,6 +1,6 @@
-package section2ClassObjetMethode.VariableDataType12;
+package section2ClassObjetMethode.variableDataType12;
 
-import section2ClassObjetMethode.ClassBasic11.business11.Compagny;
+import section2ClassObjetMethode.classBasic11.business11.Compagny;
 
 /**
  * Section 2 - 12 Variables & Data Type
