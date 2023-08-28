@@ -10,6 +10,8 @@ Ctrl N => Navigation = Tape le nom de la class ou on veut aller
 
 Ctrl Shift F10  => lance Run
 
+Ctrl F5  => re run le main
+
 Ctrl F9  => Rebuild
 
 Ctrl Alt Enter => Commencer une nell ligne au dessus de la ou est le cursseur
@@ -26,7 +28,9 @@ Ctrl /  => Commenter une ligne
 
 Ctrl Shift /  => Commenter une selection de ligne en block
 
-Shift Escap  => Hide Terminal | Project
+Shift Escap  => Hide Terminal | Project directories
 
 Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+
+Alt Enter  => importer une class
 

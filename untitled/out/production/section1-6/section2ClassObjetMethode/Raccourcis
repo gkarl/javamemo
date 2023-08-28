@@ -26,5 +26,9 @@ Ctrl /  => Commenter une ligne
 
 Ctrl Shift /  => Commenter une selection de ligne en block
 
-Shift Escap  => Hide Terminal | Project
+Shift Escap  => Hide Terminal | Project directories
+
+Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+
+Alt Enter  => importer une class
 
