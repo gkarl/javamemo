@@ -5,7 +5,7 @@ package section2ClassObjetMethode.staticVariables17;
  *
  * Pas besoin d'instancier la class pour utiliser ces variables
  * si vous souhaitez accéder aux variables  à partir d'une méthode statique, alors ces variables il faut aussi être statique.
- * Quand on crée des instance de Personne toutes ces instances partagerons cette variable constante (on doit rafouter le mot clé final)
+ * Quand on crée des instance de Personne toutes ces instances partagerons cette variable constante (on doit rajouter le mot clé final)
  */
 class Person {
 
