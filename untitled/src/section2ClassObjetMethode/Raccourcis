@@ -34,3 +34,5 @@ Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne prop
 
 Alt Enter  => importer une class
 
+Ctrl O  => pour @Override une methode de la class mére
+
