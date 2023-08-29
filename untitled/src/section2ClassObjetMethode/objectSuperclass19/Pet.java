@@ -5,10 +5,10 @@ import java.time.LocalDate;
 /**
  * Section 2 - 19 The Object SuperClass
  *
- * Si une class n'extends pas une une class par défault elle hérite de la class Object
+ * Si une class n'extends pas une class par défault elle hérite de la class Object
  * c'est pour ça qu'on a l'anotation @Override sur la methode toString()
  */
-class Pet {  // meme si la class Pet n'étant aucune class elle extends la Class Object par défault
+class Pet {  // meme si la class Pet n'étend aucune class elle extends la Class Object par défault
 
     private String name;
 
