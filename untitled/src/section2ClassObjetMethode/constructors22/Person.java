@@ -1,4 +1,4 @@
-package section2ClassObjetMethode.memberVisibilityFields21;
+package section2ClassObjetMethode.constructors22;
 
 import section2ClassObjetMethode.Address;
 import section2ClassObjetMethode.Pet;
@@ -6,15 +6,18 @@ import section2ClassObjetMethode.Pet;
 import java.time.LocalDate;
 
 /**
- * Section 2 - 21. Memeber Visibility: Fields
- * Vous devez faire attention à limiter la quantité d'accès aux données internes d'une classe en dehors de celle-ci.
+ * Section 2 - 12. Constructors
+ *
+ * Grace aux constructeur nous avons l'opportunité  d'instancier un objet en donnant des values aux fields
  */
 class Person {
 
-    private String firstName;
-    public String lastName;
 
-    protected LocalDate dob;
+
+    private String firstName;
+    private String lastName;
+
+    private LocalDate dob;
 
     private Address address;
 
@@ -23,7 +26,9 @@ class Person {
     private section2ClassObjetMethode.Person spouse;
 
 
-    public Person() {
+    // Si on ne met aucun constructor on a par default ce constructor vide
+    // mais si on crée un constructeur avec des args ce default constructor n'est pas la
+    public Person() {  // Si dans l'entrepise on ne peut pas avoir de Person sans nom il mettrait ce constructeur private
     }
 
     public Person(String firstName, String lastName, LocalDate dob) {
@@ -34,7 +39,7 @@ class Person {
 
     public String getFirstName() {
 
-        return firstName.substring(0, 1).toUpperCase() + firstName.substring(1);
+        return firstName.substring(0,1).toUpperCase() + firstName.substring(1);
     }
 
     public void setFirstName(String firstName) {
@@ -46,7 +51,7 @@ class Person {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName.substring(0, 1) + lastName.substring(1);
+        this.lastName = lastName.substring(0,1) + lastName.substring(1);
     }
 
     public LocalDate getDob() {
@@ -92,12 +97,4 @@ class Person {
                 ", spouse=" + spouse +
                 '}';
     }
-
-
-    public static void main(String[] args) {
-        Person person3 = new Person();
-        String firstName1 = person3.firstName; // les field private sont accéssible dans la meme class
-
-    }
-
 }

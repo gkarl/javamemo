@@ -1,0 +1,65 @@
+_____________Racourcis Intelij_____________
+
+psvm => fonction main()
+
+sout => println()
+
+Ctrl Z  => Undo
+
+
+Ctrl Shift F10  => lance Run
+
+Ctrl F5  => re run le main
+
+Ctrl F9  => Rebuild
+
+Shift Escap  => Hide Terminal | Project directories
+
+
+Ctrl Shift /  => Commenter une selection de ligne en block
+
+Ctrl /  => Commenter une ligne
+
+Ctrl Space  => code Completion
+
+Ctrl Y  => Delete la ligne ou le cursseur ce trouve
+
+Ctrl D  => Dupliquer une ligne ou le cursseur ce trouve
+
+Ctrl W  => étendre une selection sur une ligne depuis l'endroit ou se trouve le cursseur
+
+Ctrl O  => pour voire toutes les methodes @Override de la class mére
+
+Ctrl N => Navigation = Tape le nom de la class ou on veut aller
+
+Ctrl B  => clic sur un objet pour voire la ou il a été initialisé
+
+
+Ctrl Alt ->  => Navigate forward
+
+Ctrl Alt <-  => Navigate back la ou on était juste avant
+
+Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+
+Ctrl Alt Enter => Commencer une nell ligne au dessus de la ou est le cursseur
+
+Shift Enter  => commencer une nell ligne en dessous de la ou est le cursseur
+
+
+Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
+
+Alt Shift (fleche vers le bas) => déplacer une ligne vers le bas
+
+Alt Enter  => importer une class
+
+Alt Insert => Ouvrir génerator => constructor | getter setter | toString()
+
+
+
+
+
+
+
+
+
+
