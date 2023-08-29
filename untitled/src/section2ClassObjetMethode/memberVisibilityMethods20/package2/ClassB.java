@@ -11,7 +11,7 @@ public class ClassB {
         System.out.println("This the private method of classB.");
     }
 
-    protected void protectedMethode() { // mot clé protected accéssible par les class dans le meme package (sauf si c'est une class fille meme si dans un autre package)
+    protected void protectedMethode() { // mot clé protected accéssible par les class dans le meme package
         System.out.println("this is the protected methode of classB.");
     }
 
@@ -21,6 +21,7 @@ public class ClassB {
         // Dans le cas de class mére on peut décider de rendre certaine méthode accéssible au sub class ou non :
         // accés aux methodes protected de la class mére meme si package différent => pour y accéder utiliser le mot clé super
         // pas d'accés aux methodes package protected de la class mére si mére et fille dans 2 package différent
+        // accés aux methodes package protected de la class mére si mére et fille dans le meme package différent
 
 
     }
