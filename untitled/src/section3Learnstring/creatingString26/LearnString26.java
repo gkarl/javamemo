@@ -1,5 +1,8 @@
 package section3Learnstring.creatingString26;
 
+/**
+ * Section 3 Working Whith Text - Upper & Lower Casing
+ */
 class LearnString26 {
 
     public static void main(String[] args) {

@@ -20,7 +20,7 @@ Ctrl Shift /  => Commenter une selection de ligne en block
 
 Ctrl /  => Commenter une ligne
 
-Ctrl Space  => code Completion
+Ctrl Space  => code Completion, si on le met apres un . IDE affiche toutes propositions de méthode possible
 
 Ctrl Y  => Delete la ligne ou le cursseur ce trouve
 
