@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 import java.time.LocalDate;
 
@@ -52,7 +52,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Car{" +
+        return "section2ClassObjetMethode.objectOrientation10.Car{" +
                 "carId=" + carId +
                 ", model='" + model + '\'' +
                 ", buildDate=" + buildDate +

@@ -1,7 +1,7 @@
 package section2ClassObjetMethode.gettersSetters23;
 
-import section2ClassObjetMethode.Address;
-import section2ClassObjetMethode.Pet;
+import section2ClassObjetMethode.objectOrientation10.Address;
+import section2ClassObjetMethode.objectOrientation10.Pet;
 
 import java.time.LocalDate;
 
@@ -18,7 +18,7 @@ class Person {
 
     private Pet pet;
 
-    private section2ClassObjetMethode.Person spouse;
+    private section2ClassObjetMethode.objectOrientation10.Person spouse;
 
     /**
      * Section 2 - 23. Getters et Setters
@@ -32,7 +32,7 @@ class Person {
         this.dob = dob;
     }
 
-    // Nous voulons quand exposer l'acces à ces datas via des methodes getter et setter
+    // Nous voulons exposer l'acces à ces datas via des methodes getter et setter
     // Via getters et setters nous avons la possibilité d'assurer un certain niveau de protection si nous le souhaitons.
     // getters et setters permettent d'accéder aux datas et de les protéger mais permet aussi de les modifiers si on le souhaite pour les rendre plus friendly
     // et prévenir qu'on ne fasse pas ce qu'on souhaite sur ces datas
@@ -77,17 +77,17 @@ class Person {
         this.pet = pet;
     }
 
-    public section2ClassObjetMethode.Person getSpouse() {
+    public section2ClassObjetMethode.objectOrientation10.Person getSpouse() {
         return spouse;
     }
 
-    public void setSpouse(section2ClassObjetMethode.Person spouse) {
+    public void setSpouse(section2ClassObjetMethode.objectOrientation10.Person spouse) {
         this.spouse = spouse;
     }
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Person{" +
+        return "section2ClassObjetMethode.objectOrientation10.Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dob=" + dob +

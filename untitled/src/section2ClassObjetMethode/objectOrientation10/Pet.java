@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 import java.time.LocalDate;
 
@@ -37,7 +37,7 @@ public class Pet extends Object{
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Pet{" +
+        return "section2ClassObjetMethode.objectOrientation10.Pet{" +
                 "name='" + name + '\'' +
                 ", dob=" + dob +
                 '}';

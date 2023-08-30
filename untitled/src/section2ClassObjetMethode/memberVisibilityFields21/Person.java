@@ -1,7 +1,7 @@
 package section2ClassObjetMethode.memberVisibilityFields21;
 
-import section2ClassObjetMethode.Address;
-import section2ClassObjetMethode.Pet;
+import section2ClassObjetMethode.objectOrientation10.Address;
+import section2ClassObjetMethode.objectOrientation10.Pet;
 
 import java.time.LocalDate;
 
@@ -20,7 +20,7 @@ class Person {
 
     private Pet pet;
 
-    private section2ClassObjetMethode.Person spouse;
+    private section2ClassObjetMethode.objectOrientation10.Person spouse;
 
 
     public Person() {
@@ -73,17 +73,17 @@ class Person {
         this.pet = pet;
     }
 
-    public section2ClassObjetMethode.Person getSpouse() {
+    public section2ClassObjetMethode.objectOrientation10.Person getSpouse() {
         return spouse;
     }
 
-    public void setSpouse(section2ClassObjetMethode.Person spouse) {
+    public void setSpouse(section2ClassObjetMethode.objectOrientation10.Person spouse) {
         this.spouse = spouse;
     }
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Person{" +
+        return "section2ClassObjetMethode.objectOrientation10.Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dob=" + dob +

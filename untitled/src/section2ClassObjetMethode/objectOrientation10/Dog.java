@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 import java.time.LocalDate;
 /**

@@ -1,4 +1,4 @@
-package section2ObjetFin;
+package section2ClassObjetMethode.Exo24;
 
 import java.time.LocalDate;
 import java.util.List;

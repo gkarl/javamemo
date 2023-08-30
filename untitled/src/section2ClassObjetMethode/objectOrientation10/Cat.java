@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 /**
  * Section 2 - 10. Object Orientation
  */

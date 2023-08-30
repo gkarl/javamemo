@@ -40,7 +40,7 @@ class Pet {  // meme si la class Pet n'étend aucune class elle extends la Class
 
     @Override  // cette methode viens elle aussi d'une class mére Object et on la réécrit
     public String toString() {
-        return "section2ClassObjetMethode.Pet{" +
+        return "section2ClassObjetMethode.objectOrientation10.Pet{" +
                 "name='" + name + '\'' +
                 ", dob=" + dob +
                 '}';

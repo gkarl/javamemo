@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 /**
  * Section 2 - 10. Object Orientation
@@ -43,8 +43,8 @@ public class Address {
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Address{" +
-                "section2ClassObjetMethode.Address='" + Address + '\'' +
+        return "section2ClassObjetMethode.objectOrientation10.Address{" +
+                "section2ClassObjetMethode.objectOrientation10.Address='" + Address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 '}';

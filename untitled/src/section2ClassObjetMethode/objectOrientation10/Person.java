@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 import java.time.LocalDate;
 
@@ -84,7 +84,7 @@ public class Person {
     //10. il faut rafouter cette methode pour voire s'afficher correctement print() d'une instance et pas juste l'addresse en mémoire de l'objet
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Person{" +
+        return "section2ClassObjetMethode.objectOrientation10.Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", dob=" + dob +

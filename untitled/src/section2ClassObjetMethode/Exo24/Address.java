@@ -1,4 +1,4 @@
-package section2ObjetFin;
+package section2ClassObjetMethode.Exo24;
 
 public class Address {
 
@@ -43,7 +43,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "section2ClassObjetMethode.Address{" +
+        return "section2ClassObjetMethode.objectOrientation10.Address{" +
                 "adresse1='" + adresse1 + '\'' +
                 ", city='" + city + '\'' +
                 ", ZipCode=" + ZipCode +

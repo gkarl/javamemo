@@ -1,4 +1,4 @@
-package section2ObjetFin;
+package section2ClassObjetMethode.Exo24;
 
 import java.util.List;
 

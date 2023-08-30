@@ -1,4 +1,4 @@
-package section2ClassObjetMethode;
+package section2ClassObjetMethode.objectOrientation10;
 
 import section2ClassObjetMethode.classBasic11.business11.Compagny;
 
