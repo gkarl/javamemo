@@ -54,6 +54,8 @@ Alt Enter  => importer une class
 
 Alt Insert => Ouvrir génerator => constructor | getter setter | toString()
 
+Alt 1  => Open Project
+
 
 
 

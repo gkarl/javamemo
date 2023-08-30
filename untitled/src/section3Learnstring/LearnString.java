@@ -1,6 +1,6 @@
 package section3Learnstring;
 
-public class LearnString {
+class LearnString {
 
 
 
@@ -35,6 +35,8 @@ public class LearnString {
 
         System.out.println(fruit == anotherFruit );
         System.out.println(vegetable == anotherVegetable);
+
+
 
         // Lesson 27 Upper & Lower => mettre en Majuscule ou en minuscule une string
         String myText ="abcdefg";
