@@ -1,4 +1,4 @@
-package section3Learnstring.UpperLowerCasing27;
+package section3WorkingWithText.UpperLowerCasing27;
 
 /**
  * Section 3 - Upper & Lower Casing

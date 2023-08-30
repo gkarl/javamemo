@@ -1,4 +1,4 @@
-package section3Learnstring.stringBlankOrEmpty28;
+package section3WorkingWithText.stringBlankOrEmpty28;
 
 /**
  * Section 3 Working Whith Text - 28 Strings: Blank or Empty?

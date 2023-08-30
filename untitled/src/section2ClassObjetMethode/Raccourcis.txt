@@ -34,6 +34,8 @@ Ctrl N => Navigation = Tape le nom de la class ou on veut aller
 
 Ctrl B  => clic sur un objet pour voire la ou il a été initialisé
 
+Ctrl P  => charactere info il faut placer le cursseur entre les paraenthése d'1 methode
+
 
 Ctrl Alt ->  => Navigate forward
 

@@ -1,0 +1,38 @@
+___________Classes, Object & Methods____________________
+
+Supplément sur les Array (tableau)
+Les Array peuvent également être multidimensionnels.
+Array d'une dimension, ce qui peut être considéré comme une colonne de valeurs dans un tableur, ou une ligne.
+Mais les tableaux peuvent modéliser une table de deux colonnes et/ou lignes ou plus, ou avoir encore plus de dimensions que cela.
+
+Pour créer un Array à deux dimensions, vous pouvez procéder comme suit :
+
+String[][] my2d = new String[2][3];
+my2d[0][0] = "one";
+my2d[0][1] = "two";
+my2d[0][2] = "tree";
+my2d[1][0] = "a";
+my2d[1][1] = "b";
+my2d[1][2] = "c";
+
+Ou, alternativement, vous pouvez déclarer et initialiser le Array en même temps, comme suit :
+
+String[][] my2d = {{"one", "two", "tree"}, {"a", "b", "c"}};
+System.out.println(my2d[1][0]);
+
+____________________Sujet_________________________________
+
+1. Créez un nouveau projet Java et essayez de modéliser un domaine avec lequel vous êtes à l'aise.
+Il pourrait s'agir de quelque chose comme :
+Les sports, les affaires, les mathématiques, les achats en ligne, etc.
+Par exemple, si vous modélisé les achats en ligne, vous pourriez créer des classes pour représenter :
+Client, Produit, Commande,etc.
+Ces classes auraient probablement des propriétés et vous pourriez penser à quelques méthodes
+qui pourraient être utiles pour elles aussi.
+Il n'y a pas d'exemple de code pour cela.
+
+2. Créer un Array et l'initialiser avec les jours de la semaine.
+
+2.1.Utilisez System.out.println() pour imprimer :
+
+2.1.1. le nombre d'éléments dans l'Array

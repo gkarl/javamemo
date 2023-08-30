@@ -1,4 +1,4 @@
-package section3Learnstring;
+package section3WorkingWithText;
 
 class LearnString {
 
