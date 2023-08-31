@@ -14,7 +14,7 @@ class LearningString31 {
         String middleName = "Christopher";
 
         int length = middleName.length();
-        
+
         if (length > 5) {  // charAt()  => crée une erreur si on dépasse l'index max du string pour l'éviter on met cette condition
             System.out.println(middleName.charAt(5)); // charAt() => nous renvoie simplement le caractère vers lequel nous pointons avec un index
         }
