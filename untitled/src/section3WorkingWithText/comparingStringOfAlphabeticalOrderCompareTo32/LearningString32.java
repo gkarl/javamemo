@@ -1,13 +1,13 @@
-package section3WorkingWithText.ComparingStringOfAlphabeticalOrderCompareTo32;
+package section3WorkingWithText.comparingStringOfAlphabeticalOrderCompareTo32;
 
 /**
  * Section 3 Working Whith Text - 32 Comparing String for Alphabetical Order - compareTo()
  *
  * vous indiquer quelle string vient en premier dans ordre alphabétique.
  *
- * - le 1er mot ses 1er lettre sont placées avant le 2em mot => valeur négative
- * - le 1er mot ses 1er lettre sont identiques au 2em mot => valeur zero
- * - le 1er mot ses 1er lettre sont placées aprés le 2em mot => valeur positive
+ * - Si le 1er mot ses 1er lettre sont placées avant le 2em mot => valeur négative
+ * - Si le 1er mot ses 1er lettre sont identiques au 2em mot => valeur zero
+ * - Si le 1er mot ses 1er lettre sont placées aprés le 2em mot => valeur positive
  */
 class LearningString32 {
 
