@@ -32,9 +32,15 @@ Ctrl O  => pour voire toutes les methodes @Override de la class mére
 
 Ctrl N => Navigation = Tape le nom de la class ou on veut aller
 
-Ctrl B  => clic sur un objet pour voire la ou il a été initialisé
+Ctrl B  => clic sur un objet pour Naviguer la ou l'objet a été initialisé
 
-Ctrl P  => charactere info il faut placer le cursseur entre les paraenthése d'1 methode
+Ctrl P  => charactere info il faut placer le cursseur entre les paraenthése d'1 methode ou sur la methode
+
+Ctrl Q  => afficher la javaDoc
+
+Ctrl F  => faire une recherche sur la class ou on est
+
+Ctrl Shift F  => faire une recherche sur tout le projet
 
 
 Ctrl Alt ->  => Navigate forward

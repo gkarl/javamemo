@@ -19,7 +19,7 @@ class LearningString35 {
         System.out.println(fruit2.substring(0,1).toUpperCase() + fruit2.substring(1));  // substring() => recrée un string à partir d'un interval d'indexe
 
         //_______________Version2_________________________
-        // Utilise concat()  pour concaténer lés 2 string défini par substring()
+        // Utilise concat() pour concaténer lés 2 string défini par substring()
         System.out.println(fruit2.substring(0,1).toUpperCase().concat(fruit2.substring(1)));
 
         //_______________Version3_________________________
