@@ -47,6 +47,8 @@ Ctrl Alt Enter => Commencer une nell ligne au dessus de la ou est le cursseur
 
 Shift Enter  => commencer une nell ligne en dessous de la ou est le cursseur
 
+Shift F6  => renommer une variable partout apres l'avoir select
+
 
 Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
 

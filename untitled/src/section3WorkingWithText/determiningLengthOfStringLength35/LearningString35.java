@@ -1,13 +1,16 @@
 package section3WorkingWithText.determiningLengthOfStringLength35;
 
 /**
+ *
  * Section 3 Working Whith Text - 35 Determining the Length of a String - length()
  *
  * Connaitre le nb de character d'1 string
  */
 class LearningString35 {
 
+
     public static void main(String[] args) {
+
 
         String myText = "Bonjour";
         System.out.println(myText.length()); // lenght() => nous indique la longueur de la string en termes de caractères.
@@ -29,7 +32,6 @@ class LearningString35 {
                 .append(myText2)
                 .toString();
         System.out.println(stringBuilder2);
-
 
     }
 }
