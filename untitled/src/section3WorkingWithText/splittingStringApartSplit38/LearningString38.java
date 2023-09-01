@@ -5,6 +5,8 @@ package section3WorkingWithText.splittingStringApartSplit38;
  *
  * découpe un string pour les stocker dans array de string d'aprés un character séparateur (ex , ou \n)
  *
+ * EX souvent les gens du Business utilise des fichier excel et nous demande de faire qqc avec les datas
+ *
  * RQ il existe des librarie pour importer un .csv
  */
 class LearningString38 {
