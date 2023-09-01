@@ -41,7 +41,7 @@ class LearingString37 {
         System.out.println(myText.indexOf("e", 2)); // indexOf() => variante 2em arg on peut commencer à chercher depuis un indexe particulier
 
 
-        //EXO => Veux recupérer dans des variable les diverse partie d'un n°
+        //EXO => Veux recupérer dans des variables les diverses parties d'un n°
         String phoneNumber = "    (234) 333-5551".strip();  // strip()  => permet de supprimer les espace à gauche si user à mal tapé
         String areaCode = parseAreaCode(phoneNumber);
         String exchange= parseExchange(phoneNumber);

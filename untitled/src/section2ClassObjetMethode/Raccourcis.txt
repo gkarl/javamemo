@@ -47,7 +47,7 @@ Ctrl Alt ->  => Navigate forward
 
 Ctrl Alt <-  => Navigate back la ou on était juste avant
 
-Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+Ctrl Alt V  => Mettre une selection de code (ou cursseur en fin de ligne) dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
 
 Ctrl Alt Enter => Commencer une nell ligne au dessus de la ou est le cursseur
 
@@ -55,6 +55,8 @@ Shift Enter  => commencer une nell ligne en dessous de la ou est le cursseur
 
 Shift F6  => renommer une variable partout apres l'avoir select
 
+
+Alt Shift  => mettre le cursseur à plusieur endroit en meme temps pour modif
 
 Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
 
