@@ -34,7 +34,7 @@ Ctrl N => Navigation = Tape le nom de la class ou on veut aller
 
 Ctrl B  => clic sur un objet pour Naviguer la ou l'objet a été initialisé
 
-Ctrl P  => charactere info il faut placer le cursseur entre les paraenthése d'1 methode ou sur la methode
+Ctrl P  => charactere info il faut placer le cursseur entre les paraenthése d'1 methode ou sur la methode, affiche les différentes version de la methode avec leur signatures (input + output)
 
 Ctrl Q  => afficher la javaDoc
 
@@ -47,7 +47,9 @@ Ctrl Alt ->  => Navigate forward
 
 Ctrl Alt <-  => Navigate back la ou on était juste avant
 
-Ctrl Alt V  => Mettre une selection de code dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+Ctrl Alt V  => Mettre une selection de code (ou cursseur en fin de ligne) dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+
+Ctrl Alt N  => défait la factorisation (place le cursseur sur l'utilisation de la variable)
 
 Ctrl Alt Enter => Commencer une nell ligne au dessus de la ou est le cursseur
 
@@ -55,6 +57,8 @@ Shift Enter  => commencer une nell ligne en dessous de la ou est le cursseur
 
 Shift F6  => renommer une variable partout apres l'avoir select
 
+
+Alt Shift  => mettre le cursseur à plusieur endroit en meme temps pour modif
 
 Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
 
@@ -65,6 +69,8 @@ Alt Enter  => importer une class
 Alt Insert => Ouvrir génerator => constructor | getter setter | toString()
 
 Alt 1  => Open Project
+
+clic date verte gauche interface => affiche toutes les class qui utilise cette interface
 
 
 
