@@ -1,0 +1,17 @@
+
+1. Modéliser une personne avec un prénom et un nom de famille et s'assurer que même si le prénom est saisi en minuscules, il sera stocké en majuscules.
+
+2. Ecrivez un code qui remplace le mot "chat" par le mot "chien" chaque fois qu'il apparaît dans une phrase.
+phrase.
+
+3. Comment pouvez-vous vous assurer que lorsque des personnes entrent du texte dans un programme, il n'y a pas d'espaces involontaires au début ou à la fin de la phrase ?
+au début ou à la fin du texte ?
+
+4. Si quelqu'un saisit " alphabet" (remarquez les espaces) comme entrée dans une méthode, faites en sorte que cette méthode produise "alphabeT" à la place.
+
+5. Etant donné la chaîne "12345 Big St., Alphabet City, CA 90210" ou toute autre adresse ayant le même format, pouvez-vous écrire un code capable d'analyser et d'imprimer :
+1. Le numéro du bâtiment : 12345
+2. La rue : "Big St."
+3. La ville : "Alphabet City
+4. État : "CA" : "CA"
+5. Code postal : 90210
