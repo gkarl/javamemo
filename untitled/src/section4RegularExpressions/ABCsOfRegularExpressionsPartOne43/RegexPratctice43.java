@@ -8,6 +8,9 @@ package section4RegularExpressions.ABCsOfRegularExpressionsPartOne43;
  * [ ] => ce sera un des character dans ces crochet
  * [a-z] => de ce character à ce character est attendu
  * ^x  => exclus ce character
+ *
+ * Utilitaire web qui aide à la construction d'une regex
+ * https://regex101.com/
  */
 class RegexPratctice43 {
 

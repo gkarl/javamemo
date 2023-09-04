@@ -5,6 +5,7 @@ package section4RegularExpressions.ABCsOfRegularExpressionsPartOne44;
  *
  * \\w => lettre ou nbre '_' inclus
  * \\n => nbre attendu
+ * \\ => space attendu
  * {x} => nbre de répétition (peut prendre une range mettre une virgule)
  * + => répétition 1 à infini
  * * => répétition 0 à infini
