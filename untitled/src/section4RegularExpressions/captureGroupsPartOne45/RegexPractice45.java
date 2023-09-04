@@ -24,7 +24,7 @@ class RegexPractice45 {
             System.out.println(mat.group(1));
             System.out.println(mat.group(2));  // group() => chaque groupe ( ) dans Regex s'appel Capture Group qui peut etre appelé par son index (l'index commence par 1) via cette méthode
             System.out.println(mat.group(3));  // | si on a un capture groupe ( ) suivit par un répéteur de Pattern {2} group() n'affichera que la derniére répétion
-            System.out.println(mat.group(4));
+            System.out.println(mat.group(4));  // PB qd run l'appli il concerne le séparateur. à la fin de chaque élément du n° de tel
         }
 
     }

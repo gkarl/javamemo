@@ -36,3 +36,28 @@ Il n'y a pas d'exemple de code pour cela.
 2.1.Utilisez System.out.println() pour imprimer :
 
 2.1.1. le nombre d'éléments dans l'Array
+
+2.1.2. le 4e jour in the array
+
+3. Créez un array et initialisez-le avec des nombres de 1 à 10.
+
+4. Essayez de créer un array pour représenter le plateau de tic-tac-toe à droite.
+
+4.1.Comment accéder à la valeur du carré en bas à droite avec du
+code Java ?
+
+5. Ecrivez une méthode qui vous permet de passer n'importe quel nombre de string comme paramètres d'entrée sans utiliser un array.
+
+6. Comment créer une méthode qui peut être appelée sans créer une instance de sa classe ?
+
+7. Modélisez une voiture Car, créez-en une instance, passez-la à System.out.println() pour que ses propriétés soient imprimées.
+
+8. Modéliser une banque Bank avec la possibilité d'accéder au coffre-fort (vault). Modélisez un BankManager et un Customer
+aussi. Assurez-vous que le client Customer ne peut pas accéder directement au coffre-fort (vault) de la banque Bank, mais que le BankManager peut le faire.
+
+9. Comment pouvez-vous vous assurer qu'une instance de client Customer ne peut pas être créée sans un nom et un dépôt initial ?
+
+10. Comment pouvez-vous modéliser une classe de mathématiques pour qu'elle connaisse le nombre d'Euler ?
+
+11. Modéliser une classe avec des données qui énumère (associe à un nombre) les prénoms de trois amis, camarades de classe ou collègues de travail.
+Faites en sorte que ces données soient partagées par toutes les instances de la classe.
