@@ -4,6 +4,14 @@ import java.time.LocalDate;
 
 public class ExoString {
 
+    //4.
+    public static String transformInputNoSpaceCapitalizeLastLetter(String inputUser) {
+        String noSpaceText = inputUser.strip();
+        int tailleText = noSpaceText.length();
+        String capitalizeLastLetter = noSpaceText.substring(0, tailleText - 1) + noSpaceText.substring(tailleText - 1).toUpperCase();
+        return capitalizeLastLetter;
+    }
+
     public static void main(String[] args) {
         //1. Modéliser une personne avec un prénom et un nom de famille et s'assurer que même si le prénom est saisi en minuscules, il sera stocké en majuscules.
         Personne karl = new Personne("Karl", "Gavillot", LocalDate.of(1973, 02, 16));
@@ -25,6 +33,8 @@ public class ExoString {
         //méthode produise "alphabeT" à la place.
         String inputUser = "  alphabet  ";
         System.out.println(transformInputNoSpaceCapitalizeLastLetter(inputUser));
+
+
         //5. Étant donné la chaîne "12345 Big St., Alphabet City, CA 90210" ou toute autre adresse ayant le même format, pouvez-vous écrire un code capable d'analyser et d'imprimer : "12345 Big St.
         //pouvez-vous écrire un code capable d'analyser et d'imprimer :
         //1. Le numéro du bâtiment : 12345
@@ -32,7 +42,6 @@ public class ExoString {
         //3. La ville : "Alphabet City
         //4. État : "CA"
         //5. Code postal : 90210
-
         String addressPerson = "12345 Big St., Alphabet City, CA 90210";
         int indexFirstSpace = addressPerson.indexOf(" ");
         System.out.format("1. Le numéro de batiment : %s \n", addressPerson.substring(0, indexFirstSpace));
@@ -45,15 +54,6 @@ public class ExoString {
         System.out.format("4. Etat : %s \n", addressPerson.substring(indexSpaceAfterLastComma + 1, indexDernierSpace));
         System.out.format("5. Postal Code : %s \n", addressPerson.substring(indexDernierSpace + 1));
 
-
-
     }
 
-    //4.
-    public static String transformInputNoSpaceCapitalizeLastLetter(String inputUser) {
-        String noSpaceText = inputUser.strip();
-        int tailleText = noSpaceText.length();
-        String capitalizeLastLetter = noSpaceText.substring(0, tailleText - 1) + noSpaceText.substring(tailleText - 1).toUpperCase();
-        return capitalizeLastLetter;
-    }
 }
