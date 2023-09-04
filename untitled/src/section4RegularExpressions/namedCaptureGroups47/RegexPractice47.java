@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * Ex Suite afficher élément d'un n° de tel séparément grace à Regex non par leur index mais le nom qu'on leur donne
  *
  * ?: => placé juste dérriére '(' permet d'ignoré un capture groupe ( ) cela affectera l'index des autres
- * ?:<nom du capture groupe>  => placé juste dérriére '(' permet plutot que d'utiliser l'index du capture group pour le print() utiliser le nom qu'on aura défini entre cote
+ * ?<nom du capture groupe>  => placé juste dérriére '(' permet plutot que d'utiliser l'index du capture group pour le print() utiliser le nom qu'on appelera entre " "
  */
 class RegexPractice47 {
 
