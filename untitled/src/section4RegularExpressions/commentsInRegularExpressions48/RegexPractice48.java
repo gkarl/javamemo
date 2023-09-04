@@ -25,7 +25,7 @@ class RegexPractice48 {
         String phoneNumber = "12.321.333.7652";
         //System.out.println("1.321333.7652".matches(regex));
 
-        Pattern pat = Pattern.compile(regex, Pattern.COMMENTS); // Pattern.COMMENTS => flag on permet d'ajouté des commentaires à notre Regex | ATTENTION ne suporte pas les espaces dans Regex => run pour tester avant d'ajouter des commentaires
+        Pattern pat = Pattern.compile(regex, Pattern.COMMENTS); //** Pattern.COMMENTS => flag on permet d'ajouté des commentaires à notre Regex | ATTENTION ne suporte pas les espaces dans Regex => run pour tester avant d'ajouter des commentaires
         Matcher mat = pat.matcher(phoneNumber); // Matcher => class qui fait le match | on crée le Matcher depuis le Pattern  | matcher() => prend en arg le string avec lequel on veut check le match avec le Pattern
 
         if (mat.matches()) {  // matches() => Test si n° tel (string) match avec Regex => true ou false
