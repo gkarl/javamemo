@@ -72,6 +72,8 @@ Alt 1  => Open Project
 
 clic date verte gauche interface => affiche toutes les class qui utilise cette interface
 
+Pb curseur carré => touche insert
+
 
 
 

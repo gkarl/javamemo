@@ -170,7 +170,7 @@ public class RegexPractice {
         System.out.println("*************** Lesson 51-52");
         // Lesson 53 find() => regex methode quand pattern ce repéte de ligne en ligne
         String people = """
-                Gavillot, Karl, 16/02/1973
+                Club, Sandwich, 10/03/1999
                 Rubble, Barney, 02/02/1995
                 Flinston, William, 3/3/1910
                 Rubble, Betty, 4/4/1915 
