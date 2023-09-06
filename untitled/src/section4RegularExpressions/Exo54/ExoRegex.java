@@ -1,4 +1,4 @@
-package section4RegexFin;
+package section4RegularExpressions.Exo54;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
