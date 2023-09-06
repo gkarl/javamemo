@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 /**
  * Section 4 Regular Expressions - 51 Parsing a Real Text Document
  *
- * EX pour récupérer des données qui sont dans unfichier text pour les print
- * ou plus tard les enregistrer dans une base de données et pouvoir les manipuler les datas
+ * EX pour récupérer des données qui sont dans un fichier text pour les print
+ * ou plus tard les enregistrer dans une base de données et pouvoir manipuler les datas
  *
  * ______________Regex Ligne 1________________________
  *
@@ -81,8 +81,8 @@ class RegexPractice51 {
             Birthdate:\\s+(?<dayBirth>\\d{2})/(?<monthBirth>\\d{2})/(?<yearBirth>\\d{4}).*  # Get Birthdate
             Gender:\\s+(?<gender>\\w+)\\b.*  # Get Gender
             State\\sID:\\s+(?<stateId>\\d+)\\b.*?  # Get State ID
-            Cumulative\\sGPA\\s\\(Weighted\\)\\s+(?<cumulativeGpa>[\\d\\.]+)\\b.*  # Get Cumulative GPA  Weighted
-            Cumulative\\sGPA\\s\\(Unweighted\\)\\s+(?<cumulativeGpa2>[\\d\\.]+)\\b.*  # Get Cumulative GPA Unweighted
+            Weighted\\)\\s+(?<cumulativeGpa>[\\d\\.]+)\\b.*  # Get Cumulative GPA  Weighted
+            Unweighted\\)\\s+(?<cumulativeGpa2>[\\d\\.]+)\\b.*  # Get Cumulative GPA Unweighted
             """;
         Pattern pat6 = Pattern.compile(regex, Pattern.DOTALL | Pattern.COMMENTS); // pour prendre en compte les point litteral | pouvoir rajouter des commentaires #
         Matcher mat6 = pat6.matcher(transcript);
