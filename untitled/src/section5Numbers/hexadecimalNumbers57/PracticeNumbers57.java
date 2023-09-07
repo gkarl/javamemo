@@ -1,7 +1,7 @@
 package section5Numbers.hexadecimalNumbers57;
 
 /**
- * Section 5 -5 Hexadecimal Numbers
+ * Section 5 -57 Hexadecimal Numbers
  *
  * Féxadecimal système numérique très pratique qui nous permet de compresser base dix et nombres binaires
  * les nombres hexadécimaux s'alignent très bien avec les Bytes (octets) en le décomposant en 2 groupe de 4 bites
