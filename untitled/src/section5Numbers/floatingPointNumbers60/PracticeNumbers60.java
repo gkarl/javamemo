@@ -19,6 +19,10 @@ package section5Numbers.floatingPointNumbers60;
  *            0.125                0.016625                             0.000976        (Total Approximation aprés addition = 0.141601562)
  *
  *              1     0      0       1        0      0         0            1
+ *
+ *
+ * RQ pour la décimal avant la virgule il divise ce chiffre par 2 et compte le nbre de fois qu'il doit le faire pour que ce nbre soit < 2
+ * Ce nbre de fois est additionné à 128 (les 2 1er Bytes réservé à la décimal avant la virgule) => methode permet de déplacer la décimal la virgule en fonction de la gradeur du nbre avant la virgule
  */
 class PracticeNumbers60 {
 
