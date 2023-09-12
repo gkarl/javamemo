@@ -10,7 +10,7 @@ class PracticeNumbers62 {
 
         System.out.println(5 * (3 + 2));  // les division et multiplication on un ordre d'opération prioritaire par rapport l'addition et la soustraction mais quand on met des parenthése l'ordre change
 
-        System.out.println((double)7 /4); // On peut CAst un int pour de venir un double ou un float |  le nombre ayant le niveau de précision le plus élevé déterminera le type de données => return un double
+        System.out.println((double)7 /4); // On peut Cast un int pour devenir un double ou un float plus de précision |  le nombre ayant le niveau de précision le plus élevé déterminera le type de données => return un double
 
         System.out.println(7 / 4f); // On peut assi Caster un int en float ou double de cette façon
 
