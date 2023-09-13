@@ -76,7 +76,7 @@ Pb curseur carré => touche insert
 
 Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de selection horizontal à un style vertical . C'est une façon de sélectionner rapidement des éléménts sur plusieurs lignes
 
-
+/** enter => pour créer une JavaDoc sur une methode ...
 
 
 
