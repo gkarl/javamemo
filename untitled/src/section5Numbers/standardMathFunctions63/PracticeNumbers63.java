@@ -22,7 +22,7 @@ class PracticeNumbers63 {
         System.out.println(Math.min(num1, num2));   // min() =>  Je vais lui passer un num un et un num. Il renverra le nombre le plus petit, le minimum.
         System.out.println(Math.max(num1, num2));   // max() => Je vais lui passer un num un et un num. Il renverra le nombre le plus grand, le maximum.
 
-        System.out.println(Math.pow(2, 3));         // pow() => exposent | RX  2 exposant 3
+        System.out.println(Math.pow(2, 3));         // pow() => exposent | EX  2 exposant 3
 
         System.out.println(Math.random());          // random() => cette fonction aléatoire est considérée comme être pseudo-aléatoire, pour de la sécurité on utilisera une meilleur methode | Renvoie des valeur entre [0.1 - 0.9]
         System.out.println(Math.random() * 10);     // pour rendre ce résultat exploitable on le multiplie par 10 pour obtenir un nbre compris entre [1.1 - 9.9]

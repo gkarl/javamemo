@@ -1,0 +1,40 @@
+//______________Cours_______________________________
+Les expressions régulières Java prennent également en charge les Backreferences (références arrière).
+Il s'agit de la capacité d'une expression rationnelle à renvoyer à un groupe de capture situé plus tôt dans l'expression.
+Par exemple, si l'on donne une chaîne de caractères :
+“aaabbb12345cccdddzzz12345”
+
+//______________Methode 1_______________________________
+nous pourrions écrire une expression réguliere qui match la même séquence de nombres, comme suit :
+“[a-z]+(\\d{5})[a-z]+\\1”
+
+Où :
+- "[a-z]+" => correspond à "aaabbb"
+- "(\d{5})" => correspond à "12345" ET est stocké dans la référence #1
+- "[a-z]+" correspond également à "cccdddzzz"
+- "\\N1" renvoie au groupe de capture n° 1 qui est "12345".
+
+//______________Methode 2_______________________________
+Nous pouvons également utiliser un capture groupe avec des  Backreferences comme suit :
+“[a-z]+(?<nums>\\d{5})[a-z]+\\k<nums>”
+
+Notez l'utilisation de "\k<nums>" pour renvoyer au groupe de capture nommé "nums". Veillez à
+d'inclure le "k" dans "\k" pour indiquer que vous faites référence à un groupe nommé.
+
+
+//______________Exercices_______________________________
+
+1. Écrivez une regex qui correspondrait aux mots suivants : Sombre, écorce, Alouette
+        1.1. Pour relever un défi supplémentaire, pourriez-vous en plus faire correspondre : stark
+
+2. Utilisez les captures groupes pour écrire une expression reguliére qui pourrait correspondre aux mots suivants :
+    Abracadabra or Agracadagra
+
+3. Comment utiliser des parenthèses dans une expression réguliére pour regrouper mais sans capturer ?
+
+4. Ecrivez une regex qui teste si une string est une adresse et vous permet d'en extraire les parties
+    (format d'adresse au choix).
+
+5. Ecrivez une regex qui teste si une string est une adresse e-mail.
+    5.1. Note : Faire ceci en regex est en fait notoirement difficile pour se conformer à TOUTES les façons dont une adresse email peut être écrite.
+         Cependant, vous pouvez utiliser la forme la plus simple d'adresse email à laquelle vous pouvez penser, telle que : first.last@domain.com
