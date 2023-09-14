@@ -1,6 +1,7 @@
 package section5Numbers.enSavoirPlusSurBigDecimal70;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Section 5 - 70 En savoir plus sur BigDecimal et BigInteger
@@ -26,12 +27,12 @@ class PracticeNumbers70 {
 
         BigDecimal num0 = new BigDecimal(3.141592f); // On peut instancier BigDecimal avec un type primitif EX float | PB perd tout de suite en précision car IDE commence à stocker arg comme un float => approximation
 
-        BigDecimal num = new BigDecimal("2.15");
+        BigDecimal num1 = new BigDecimal("2.15");
 
-        byte b = num.byteValue(); // byteValue() => convertit un BigDecimal en type byte
-        String myString = num.toString(); // toString() => convertit un BigDecimal en type String
+        byte b = num1.byteValue(); // byteValue() => convertit un BigDecimal en type byte
+        String myString = num1.toString(); // toString() => convertit un BigDecimal en type String
 
-        BigDecimal numG = new BigDecimal("123456789"); // marche à peut pret de la meme façon que BigDecimal
+        BigInteger num2 = new BigInteger("123456789"); // marche à peut pret de la meme façon que BigDecimal
 
     }
 }
