@@ -20,7 +20,7 @@ class PracticeNumbers69 {
 
         System.out.println(new BigDecimal(".314").multiply(new BigDecimal("5.321"))); // multiply() => Multiplication
 
-        MathContext mc = new MathContext(2, RoundingMode.HALF_UP); // MathContext => class prend 2 args (précision, Mode d'arrondi) à instanciation utilisé avec les méthodes divide() & sqrt()
+        MathContext mc = new MathContext(2, RoundingMode.HALF_UP); // MathContext => class prend 2 args (précision, Mode d'arrondi) à instanciation utilisé avec les méthodes divide() & sqrt() | EX précision 2 = 2 chiffre aprés les 0 zero aprés la virgule
         System.out.println(new BigDecimal(".314").divide(new BigDecimal("5.321"), mc)); // divide() => Division prend 2 args (le diviseur, l'instance MathContext)
         System.out.println(new BigDecimal("25").sqrt(mc)); // sqrt() => Racine quarré prend 1 arg (l'instance MathContext)
 
