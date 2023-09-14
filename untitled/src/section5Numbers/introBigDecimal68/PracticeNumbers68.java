@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * BigDecimal Permet de faire des opérations avec les nbre a virgule plus précis
  * EX on l'utilise pour les calcule monétaires et certains calcule scientifique suivant le niveau de précision désiré
  *
- * Préférer utiliser les opérations avecles types primitifs (float, double) lorsque vous savez que vous pouvez vous en sortir avec
+ * Préférer utiliser les opérations avec les types primitifs (float, double) lorsque vous savez que vous pouvez vous en sortir avec
  */
 class PracticeNumbers68 {
 
