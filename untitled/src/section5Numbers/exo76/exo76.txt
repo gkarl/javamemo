@@ -1,0 +1,107 @@
+1. Si vous pouviez recevoir simultanément jusqu'à huit types de signaux radio différents (dans votre ordinateur et un programme que vous avez écrit)
+    et que vous deviez être capable d'enregistrer quels sont ces huit types de signaux vous avez reçu à un moment donné,
+    quel serait le moyen le plus compact (ou compressé - utilisant le moins de mémoire ou de stockage) de les enregistrer (en utilisant le moins de mémoire ou de stockage possible) ?
+    Par exemple, vous pourriez recevoir les signaux A + B + C simultanément, ou A + D, ou juste G, etc.
+
+    1.1 Si vous recevez simultanément les signaux A + D + C, comment pouvez-vous déterminer efficacement que D est l'un des signaux que vous avez reçus ?
+        que D est l'un des signaux que vous avez reçus - en vous basant sur votre solution ci-dessus ?
+
+___________________Aide 1__________________________
+Vous pourriez assigner chaque type de signal à un bit d'un octet.
+Pour chaque type de signal reçu, activez le bit correspondant.
+Ensuite, convertir le schéma binaire en un nombre.
+_________________________________________________
+
+2. Quelle est une autre façon d'additionner 2 + 4 sans utiliser le symbole "+" ?
+
+___________________Aide 2__________________________
+Prenons le schéma binaire représentant les types de signaux reçus,
+et AND avec le schéma binaire du type de signal que vous testez.
+Si vous avez reçu 1 0 1, et que vous voulez savoir si le bit le plus à gauche est un 1,
+vous feriez ET
+1 0 1 ET
+1 0 0
+Le résultat serait :
+1 0 0
+Et vous sauriez que le bit le plus à gauche était "allumé".
+_________________________________________________
+
+3. En utilisant uniquement ce que vous avez appris jusqu'à présent dans ce cours,
+   créez une classe qui contient 10 noms en minuscules et qui a une méthode quipeut être appelée 10 fois, chaque fois en retournant le nom suivant.
+   Si la méthode s'appelle "next()", la première fois qu'elle est appelée, elle renvoie "nom1",
+   la deuxième fois que "next()" est appelée, elle renvoie "nom2", etc.
+
+___________________Aide 3__________________________
+Vous pouvez utiliser une opération logique OU.
+En Java, il s'agit du symbole du tuyau, " | ".
+2 + 4 est équivalent à :
+2 | 4
+Remarque : cette opération ne fonctionne que pour les nombres dont les motifs binaires ne se chevauchent pas.
+
+2 | 2 does not equal 2 + 2
+0 0 0 0 0 0 1 0 = 2
+OR
+0 0 0 0 0 1 0 0 = 4
+—————————
+0 0 0 0 0 1 1 0 = 6
+BUT
+0 0 0 0 0 0 1 0 = 2
+OR
+0 0 0 0 0 0 1 0 = 2
+—————————
+0 0 0 0 0 0 1 0 = 2
+_________________________________________________
+
+4. Imaginez que l'on vous fournisse des données sur la durée d'entreposage des articles dans un entrepôt.
+   Votre travail consiste à les classer en fonction du temps passé dans l'entrepôt.
+   Les articles peuvent être classés dans les catégories 0, 1, 2 ou 3.
+   Les articles de la classe 0 ont moins de 89 jours. Classe 1 = 90-179 jours, classe 2 = 180-269 jours, Classe 3 = 270-364 jours.
+   Pour les temps d'attente donnés dans l'entrepôt : 13, 49, 90, 130, 175, 181, 255, 310, 330, 359,
+   écrivez une classe similaire à l'exercice 3 ci-dessus, qui a une méthode next() qui peut être appelée 10 fois et qui donne un résultat en forme d'indice.
+   qui peut être appelée 10 fois et qui produit un nombre représentant la classification de chaque nombre dans l'ensemble des âges ci-dessus.
+   Exemple : un article qui attend 5 jours renvoie 0 et un article qui attend 92 jours renvoie 1.
+   un article attendant 92 jours renverrait 1.
+
+___________________Aide 4__________________________
+Vous aurez besoin d'un moyen de stocker les 10 noms dans une classe.
+Vous aurez besoin d'un moyen d'accéder à chaque name à chaque fois à la méthode next() est appelée.
+Envisagez d'utiliser un Array, un nombre et d'incrémenter le nombre.
+_________________________________________________
+
+5. Créez une méthode, next(), qui peut être appelée 10 fois et qui génère un nombre entier aléatoire entre 0 & 10 (non inclus).
+   Cette méthode conserve la somme de tous les nombres aléatoires qu'elle génère et renvoie cette somme à chaque fois.
+   Si la première fois que next() est appelée, elle génère 5, et la deuxième fois qu'elle est appelée, elle génère 3,
+   il devrait retourner 8 lors du second appel - par exemple.
+
+___________________Aide 5__________________________
+Ce problème concerne principalement un simple mathématique et de votre capacité à reconnaître un modèle simple.
+Lorsque vous disposez d'une série de données dans un ensemble
+qui doivent être classées ou être classées ou regroupées à intervalles réguliers,
+vous divisez souvent par cet intervalle régulier.
+Dans ce cas, l'intervalle est de 90.
+En divisant chaque par 90, vous traduirez les valeurs directement dans leur classification numérique de 0, 1, 2 ou 3
+_________________________________________________
+
+6. Ecrivez une fonction qui prend une chaîne de caractères comme "149.32" et la formate en argent,
+   quel que soit l'endroit où vous vivez.
+   Ainsi, si vous vivez aux Etats-Unis, la fonction renverra "$149.32", Corée = ₩149, France/ UE = 149,32 €, etc.
+
+7. Ecrivez une fonction qui prend en entrée une chaîne de caractères de "$12,345.83"
+   et qui imprime cette valeur divisée par 32,19. Elle doit retourner 383,53 $.
+
+8. Utilisez printf() pour formater les entrées suivantes afin d'imprimer les sorties suivantes
+
+        Entrée                          Sortie
+        123456.783                      $123,456.78
+        -9876.32532                     (9,876.325)
+        23.19283928394829182            2.319284e+01f
+        123456                          0000123456
+        -9876.35532                     -9,876.4
+
+9. Comment pourriez-vous formater chacune des entrées du tableau ci-dessus
+   et les stocker dans des variables de type String au lieu de les imprimer directement ?
+
+10. Utilisez des instances de DecimalFormat pour effectuer les mêmes conversions dans le tableau ci-dessus.
+
+11. Ecrivez une méthode qui prend les entrées String, "37" & "13", et renvoie un entier de leur
+somme, 50.

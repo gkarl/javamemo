@@ -1,4 +1,4 @@
-package section5NumbersFin;
+package section5Numbers.exo76;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
