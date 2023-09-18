@@ -57,7 +57,7 @@ Ctrl Alt Enter => Commencer une nell ligne au-dessus de la ou est le curseur
 
 Shift Enter  => commencer une nell ligne en dessous de la ou est le curseur
 
-Shift F6  => renommer une variable partout apres l'avoir select
+Shift F6  => renommer une variable partout apres voir mis le cursseur sur le nom de la variable à modifier
 
 
 Alt Shift  => mettre le curseur à plusieurs endroits en meme temps pour modif
@@ -79,6 +79,8 @@ Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de select
 
 clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
 
+Select code ( => ça entoure ce code de parenthese
+
 
 PB place le curseur sur methode souligné en rouge pour avoir un descriptif du problème
 
@@ -87,6 +89,8 @@ Alt Return <=> ou Clic sur ampoule rouge à Droite => IDE nous offre des solutio
 /** enter => pour créer une JavaDoc sur une methode ...
 
 Pb curseur carré => touche insert
+
+
 
 
 
