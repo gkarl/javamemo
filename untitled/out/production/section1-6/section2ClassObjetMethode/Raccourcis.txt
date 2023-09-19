@@ -57,7 +57,7 @@ Ctrl Alt Enter => Commencer une nell ligne au-dessus de la ou est le curseur
 
 Shift Enter  => commencer une nell ligne en dessous de la ou est le curseur
 
-Shift F6  => renommer une variable partout apres voir mis le cursseur sur le nom de la variable à modifier
+Shift F6  => renommer une variable partout apres avoir mis le curseur sur le nom de la variable à modifier
 
 
 Alt Shift  => mettre le curseur à plusieurs endroits en meme temps pour modif
