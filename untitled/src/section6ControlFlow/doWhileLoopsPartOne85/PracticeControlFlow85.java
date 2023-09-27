@@ -22,11 +22,11 @@ class PracticeControlFlow85 {
             if (inputUserText.matches("-?\\d{1,2}")) {
                 int inputUser = Integer.parseInt(inputUserText);
                 if (inputUser == randomNum) {
-                    String tryText = nbTentative == 1 ? "try" : "tries";   // Opérateur Ternaire permet de faire une condition en 1 ligne | Si le nbre de tentative est égale 1 stock "try" si non stock "Tries"
+                    String tryText = nbTentative == 1 ? "try" : "tries";   // Opérateur Ternaire permet de faire une condition en 1 ligne | Si le nbre de tentative est égale à 1 stock "try" si non stock "Tries"
                     System.out.printf("Bravo vous avez trouver le bon nombre %d, au bout de %d %s %n", randomNum, nbTentative, tryText); // affiche "try" ou "Tries" suivant le nbre de tentative
                     return;
                 } else {
-                    nbTentative++;  // Incrément du compteur
+                    nbTentative++;  // Incrément du compteur à chaque echec de user
                     System.out.println("Perdu");
                 }
             }

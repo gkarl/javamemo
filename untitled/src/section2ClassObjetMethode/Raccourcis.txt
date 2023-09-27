@@ -89,6 +89,8 @@ Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de select
 
 Clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
 
+Clic D / Refactor / Introduce Constant => C'est généralement une mauvaise idée de hard code un chiffre on le select pour en faire une Constante | Nommerles constante en majuscule
+
 Select code ( => ça entoure ce code de parenthese
 
 
