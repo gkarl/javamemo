@@ -3,7 +3,7 @@ package section6ControlFlow.switchStatementPatternMatching82;
 /**
  * Section 6 Control Flow - 82 Switch Statement Pattern Matching JDK 17 Preview
  *
- * Swtich depuis Java 17 permet de tester le type d'une variable alors print un truc
+ * Swtich depuis Java 17 permet de tester le type d'une variable alors print cet variable => Pattern Matching
  *
  * Pour activer cette fct :
  * Clic D sur le projet / OpenModule Settings / Project / SDK 17 + Pattern mathing for switch

@@ -20,11 +20,11 @@ Ctrl Shift /  => Commenter une selection de ligne en block
 
 Ctrl /  => Commenter une ligne
 
-Ctrl Space  => code Completion, si on le met apres un . IDE affiche toutes propositions de méthode possible
+Ctrl Space  => code Completion, si on le met apres un. IDE affiche toutes propositions de méthode possible
 
-Ctrl Y  => Delete la ligne ou le curseur ce trouve
+Ctrl Y  => Delete la ligne ou le curseur se trouve
 
-Ctrl D  => Dupliquer une ligne ou le curseur ce trouve
+Ctrl D  => Dupliquer une ligne ou le curseur se trouve
 
 Ctrl W  => étendre une selection sur une ligne depuis l'endroit ou se trouve le curseur
 
@@ -38,7 +38,7 @@ Ctrl P  => character info il faut placer le curseur entre les parentheses d'1 me
 
 Ctrl Q  => afficher la javaDoc
 
-Ctrl Space => place le curseur après un point (class.) pour afficher les methode dispo dans cette class | puis si on a déja mis une methode écrite en déplaçant le curseur à la fin de son nom affiche input/output (return) attendu pour cette methode => permet de résoudre des erreurs de typage parfois (si la methode est un input (arg) d'une autre méthode checker aussi la compatibilité avec output de cette methode en arg)
+Ctrl Space => place le curseur après un point (class.) pour afficher les methode disponible dans cette class | puis si on a déja mis une methode écrite en déplaçant le curseur à la fin de son nom affiche input/output (return) attendu pour cette methode => permet de résoudre des erreurs de typage parfois (si la methode est un input (arg) d'une autre méthode checker aussi la compatibilité avec output de cette methode en arg)
 
 Ctrl F  => faire une recherche sur la class ou on est
 
@@ -53,11 +53,15 @@ Ctrl Alt V  => Mettre une selection de code (ou curseur en fin de ligne) dans un
 
 Ctrl Alt N  => défait la factorisation (place le curseur sur l'utilisation de la variable)
 
+Ctrl Alt T  => Mettre une selection de code dans un bloc if | else if | while | for | try/catch | try/finally | synchronized | Runnable ...
+
 Ctrl Alt Enter => Commencer une nell ligne au-dessus de la ou est le curseur
 
 Shift Enter  => commencer une nell ligne en dessous de la ou est le curseur
 
 Shift F6  => renommer une variable partout apres avoir mis le curseur sur le nom de la variable à modifier
+
+Shift Tab => retirer de l'indentation
 
 
 Alt Shift  => mettre le curseur à plusieurs endroits en meme temps pour modif
@@ -72,19 +76,20 @@ Alt Insert => Ouvrir generator => constructor | getter setter | toString()
 
 Alt 1  => Open Project
 
+Alt Return <=> ou Clic sur ampoule rouge à Droite => IDE nous offre des solutions auto généré pour fixer le problème | PB place le curseur sur methode souligné en rouge pour avoir un descriptif du problème
+
+Alt F12 => Ouvre un Terminal
+
 
 Clic date verte gauche interface => affiche toutes les class qui utilise cette interface
 
 Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de selection horizontal à un style vertical . C'est une façon de sélectionner rapidement des éléments sur plusieurs lignes
 
-clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
+Clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
 
 Select code ( => ça entoure ce code de parenthese
 
 
-PB place le curseur sur methode souligné en rouge pour avoir un descriptif du problème
-
-Alt Return <=> ou Clic sur ampoule rouge à Droite => IDE nous offre des solutions auto généré pour fixer le problème
 
 /** enter => pour créer une JavaDoc sur une methode ...
 
