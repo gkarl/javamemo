@@ -5,6 +5,8 @@ import java.util.Random;
 /**
  * Section 6 Control Flow - 83 While Loops: Part One
  *
+ *  Programme ou user cherche un nbre random
+ *
  * Pour faire fonctionner la console on doit utiliser le Terminal et lancer le file déja build (bit) ex :
  *
  * java -cp out\production\section1-6\section6ControlFlow\whileLoopsPartOne83 PracticeControlFlow83
