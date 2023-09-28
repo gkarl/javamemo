@@ -17,7 +17,7 @@ class PracticeControlFlow {
 
         //_________________Methode 2_____________________________
         String[] fruits2 = {"banane", "papille", "litchi", "mague"};
-        for (String fruit : fruits2) {          // Si on a pas besoin d'index (un compteur) si on veut juste loop (boucler) sur des element dans array (tableau)
+        for (String fruit : fruits2) {          // Si on a pas besoin d'index (un compteur) si on veut juste loop (boucler) sur des elements dans array (tableau)
             System.out.printf("les fruits tropico sont : %s %n", fruit);
         }
     }
