@@ -13,6 +13,8 @@ Ctrl F5  => re run le main
 
 Ctrl F9  => Rebuild
 
+Ctrl F2 => Stop run | Utile qd boucle infini
+
 Shift Escap  => Hide Terminal | Project directories
 
 
@@ -27,6 +29,8 @@ Ctrl Y  => Delete la ligne ou le curseur se trouve
 Ctrl D  => Dupliquer une ligne ou le curseur se trouve
 
 Ctrl W  => étendre une selection sur une ligne depuis l'endroit ou se trouve le curseur
+
+Ctrl Shift -> => Agrandit la selection vers la droite
 
 Ctrl O  => pour voire toutes les methods @Override de la class mére
 
@@ -86,6 +90,8 @@ Clic date verte gauche interface => affiche toutes les class qui utilise cette i
 Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de selection horizontal à un style vertical . C'est une façon de sélectionner rapidement des éléments sur plusieurs lignes
 
 Clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
+
+Clic D / Refactor / Introduce Constant => C'est généralement une mauvaise idée de hard code un chiffre on le select pour en faire une Constante | Nommerles constante en majuscule
 
 Select code ( => ça entoure ce code de parenthese
 

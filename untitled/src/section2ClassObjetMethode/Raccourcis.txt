@@ -13,6 +13,8 @@ Ctrl F5  => re run le main
 
 Ctrl F9  => Rebuild
 
+Ctrl F2 => Stop run | Utile qd boucle infini
+
 Shift Escap  => Hide Terminal | Project directories
 
 
