@@ -1,0 +1,70 @@
+
+1.Ecrivez une méthode en 4 lignes de code (sans inclure le nom de la méthode/la signature et les accolades) qui
+qui produit les jours de la semaine, un par ligne, à l'aide d'une boucle "for" ordinaire et d'un Array.
+
+    1.1. Refaites-le en utilisant enhanced ‘for-loop’.
+
+    1.2. Refaites-le en mettant une majuscule à chaque ligne de sortie.
+        Dimanche
+        LUNDI
+        Mardi
+        MERCREDI
+        etc...
+
+3. Recommencez, mais en utilisant seulement 4 lignes de code (sans inclure la méthode et les accolades de la
+de la méthode.
+
+    3.1. Répétez toutes les parties de l'exercice 1, mais utilisez "while-loop" au lieu de "for-loop" (le cas échéant).
+
+    3.2 Refaites l'exercice 2 mais utilisez une boucle "do-while". (Aucune solution n'est fournie pour cet exercice)
+
+4. Utilisez un Array de jours de la semaine, un 'for-loop' amélioré et un 'if/else' pour créer la sortie suivante.
+
+    Nous mangeons du rôti le dimanche
+    Nous mangeons des spaghettis le lundi
+    Nous mangeons des tacos le mardi
+    Nous mangeons du poulet le mercredi
+    Nous mangeons du pain de viande le jeudi
+    Nous mangeons des hamburgers le vendredi
+    Nous mangeons de la pizza le samedi
+
+5. Répétez l'exercice n°4 mais au lieu de if/else, utilisez le traditionnel switch/case.
+
+6. Répétez l'exercice n°5 mais utilisez une nouvelle expression de commutation en la répétant le moins possible.
+
+    6.1. Ajouter une méthode privée qui peut mettre en majuscule la première lettre de chaque mot du repas. Ainsi, au lieu de "Nous mangeons des spaghettis,
+         au lieu de “We eat spaghetti on Sunday”, elle imprimerait "Nous m“We eat Spaghetti on Sunday”.
+         Ne mettez pas vous-même les noms des repas en majuscules. Laissez votre nouvelle méthode le faire pour vous.
+
+    6.2. Améliorez la méthode 6.1 pour qu'elle soit suffisamment intelligente pour produire un résultat : “We eat Pot Roast on Sunday”, c'est-à-dire qu'elle devrait mettre une majuscule à chaque mot d'une phrase,
+         elle devrait mettre une majuscule à chaque mot d'un nom de repas à plusieurs mots.
+
+Aide => Essayez d'utiliser l'opérateur ternaire
+
+7. Itérer sur tous les jours de la semaine dans un tableau et additionner le nombre total de caractères dans tous les jours de la semaine.
+dans tous les jours de la semaine. Par exemple, "dimanche"=6, "lundi"=6, etc.
+est donc 50.
+
+Aide => Utilisez l'expression "switch" pour déterminer le repas d'un jour donné et assigner ce repas à une variable.
+        Ensuite, en dehors de l'expression switch utiliser printf() pour imprimer une String formatée
+        formatée String à l'aide des variables repas et jour de la semaine.
+
+
+8. Utilisez Regex avec des paramètres nommés et une boucle pour analyser les adresses ci-dessous et imprimer l'adresse, la ville, l'état.
+l'adresse, la ville, l'état et le code postal. Transférez cette liste d'adresses dans votre
+programme à l'aide d'un bloc de texte Java """ String.
+12345 First Street, First City, AA 90210
+22222 Second Street, Second City, BB 22222
+33333 Third Street, Third City, CC 33333
+44444 Fourth Street, Fourth City, DD 44444
+55555 Fifth Street, Fifth City, EE 55555
+66666 Sixth Street, Sixth City, FF 66666
+77777 Seventh Street, Seventh City, GG 77777
+88888 Eighth Street, Eighth City, HH 88888
+99999 Ninth Street, Ninth City, II 99999
+00000 Tenth Street, Tenth City, JJ 00000
+
+Aide => Vous devez activer l'option
+        MULTILINE sur le moteur regex de Java de Java.
+        Vous pouvez essayer de construire les morceau par morceau en utilisant le testeur de testeur de regex à l'adresse https://regex101.com.
+        Si vous utilisez le testeur de regex, assurez-vous de l'activer pour "java" et notez qu'il ne n'utilise pas les doubles espaces "\" comme l'exige l'IDE Java.

@@ -7,6 +7,9 @@ package section6ControlFlow.SwitchStatementNewFeatures81;
  *
  * - maintenant il peut retourner une valeur (-> ou yield)
  * - et aussi combiner des conditions qui retourneront la meme valeur
+ *
+ * Pour activer cette nell fonctionalité du switch :
+ * Clic D project directory / Open Module Settings / Project / 17 - Pattern matching for switch
  */
 
 class PracticeControlFlow81 {

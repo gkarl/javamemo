@@ -42,7 +42,7 @@ class PracticeControlFlow90 {
 
         //________________________Methode 2__________________________
 
-        while(mat.find()) { // A chaque boucle mat.find() regex recherche le pattern suivant qui match
+        while(mat.find()) { // A chaque boucle mat.find() regex recherche le pattern suivant qui match qd trouve = true si non false
             System.out.println("________________________Methode 2__________________________");
             System.out.printf("%s %s %s %n", mat.group("lastName"), mat.group("firstName"), mat.group("dob")); // Avantage pour print on écrit les groupe name une seul fois
         }
