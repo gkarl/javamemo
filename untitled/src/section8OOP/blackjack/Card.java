@@ -1,6 +1,6 @@
 package section8OOP.blackjack;
 
-public class Card {
+class Card {
 
     private Rank rank;
 

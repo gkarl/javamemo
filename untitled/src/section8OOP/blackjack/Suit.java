@@ -1,6 +1,6 @@
 package section8OOP.blackjack;
 
-public enum Suit {
+enum Suit {
     COEUR('\u2665'),
     TREFFLE('\u2663'),
     PIC('\u2660'),

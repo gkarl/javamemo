@@ -10,7 +10,7 @@ import section8OOP.enums110.Suit;
  */
 class Card {
 
-        private Rank rank; // Pour changer rapidement tous le type de cette attribut en type Enum clic D sur type / Rafactor/ Type Migration ou Ctrl Shift F6
+        private Rank rank; // Pour changer rapidement tous le type de cette attribut en type Enum clic D sur type / Refactor/ Type Migration ou Ctrl Shift F6
 
         private Suit suit;
 

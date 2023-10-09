@@ -9,9 +9,11 @@ Ctrl Z  => Undo
 
 Ctrl Shift F10  => lance Run
 
-Ctrl F5  => re run le main
+Ctrl F5  => re run le main | ou un test
 
 Ctrl F9  => Rebuild
+
+Alt F12  => ouvre un Terminal
 
 Ctrl F2 => Stop run | Utile qd boucle infini
 
@@ -32,6 +34,8 @@ Ctrl W  => étendre une selection sur une ligne depuis l'endroit ou se trouve le
 
 Ctrl Shift -> => Agrandit la selection vers la droite
 
+Ctrl Shift <- => Agrandit la selection vers la gauche
+
 Ctrl O  => pour voire toutes les methods @Override de la class mére
 
 Ctrl N => Navigation = Tape le nom de la class ou on veut aller
@@ -48,12 +52,20 @@ Ctrl F  => faire une recherche sur la class ou on est
 
 Ctrl Shift F  => faire une recherche sur tout le projet
 
+Ctrl Shift T => Pour naviguer vers le test de la Class ouverte
+
+Ctrl Shift J => remonter la ligne du dessous à la position du curseur EX remonter un else juste derriére } | J pour join
+
+Ctrl Shift F8 => fenetre qui affiche tous les points d'arret qu'on a mis
+
 
 Ctrl Alt ->  => Navigate forward
 
 Ctrl Alt <-  => Navigate back la ou on était juste avant
 
 Ctrl Alt V  => Mettre une selection de code (ou curseur en fin de ligne) dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
+
+Ctrl Alt M  => Factorisation select plusieurs lignes de code identiques pour les mettre dans une methode | IDE nous propose s'il trouve ce Pattern à plusieurs endroits de les remplacer par cette fct
 
 Ctrl Alt N  => défait la factorisation (place le curseur sur l'utilisation de la variable)
 
@@ -74,7 +86,7 @@ Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
 
 Alt Shift (fleche vers le bas) => déplacer une ligne vers le bas
 
-Alt Enter  => importer une class
+Alt Enter  => importer une class | ou crée une Class ou une methode qui est utilisé mais pas encore crée (ex TDD)
 
 Alt Insert => Ouvrir generator => constructor | getter setter | toString()
 
@@ -89,9 +101,11 @@ Clic date verte gauche interface => affiche toutes les class qui utilise cette i
 
 Clic D / Column Selection Mode = Alt Maj Insert => On passe d'un style de selection horizontal à un style vertical . C'est une façon de sélectionner rapidement des éléments sur plusieurs lignes
 
-Clic D / Refactor / inline field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
+Clic D / Refactor / inline (Introduce) field / Menu déroulant = field déclaration => Select le nom de la variable (Ex nom d'1 instance) de variable local elle devient une variable de class (field) (RQ si les methods ou cette variable est utilisé sont static IDE la mettre static)
 
 Clic D / Refactor / Introduce Constant => C'est généralement une mauvaise idée de hard code un chiffre on le select pour en faire une Constante | Nommerles constante en majuscule
+
+clic D (sur le type d'un attribut) / Refactor / type migration => lorsqu'on a fait un Enum pour cette attribut et quon veut les associer  | Shift Ctrl F6
 
 Select code ( => ça entoure ce code de parenthese
 
@@ -100,6 +114,15 @@ Select code ( => ça entoure ce code de parenthese
 /** enter => pour créer une JavaDoc sur une methode ...
 
 Pb curseur carré => touche insert
+
+
+F8  => step over dans debbuger | exécute la ligne sans entré dans les détaille des methodes présent sur la ligne
+
+F7  => step in  | entre dans les détaille de la ou les methode lancé sur la ligne
+
+Alt F12  => ouvre un Terminal
+
+java -cp target\classes com.tuto.game.GuessingGame => Lancer un code depuis le Terminal -cp = change path| retrouve arboressance du build target\classes puis ajoute le path du package de la class com.tuto.game.GuessingGame EX user doit ecrire qqc dans la console String input = System.console().readLine("Enter a number: ");
 
 
 

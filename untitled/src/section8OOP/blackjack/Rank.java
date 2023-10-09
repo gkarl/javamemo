@@ -1,6 +1,6 @@
 package section8OOP.blackjack;
 
-public enum Rank {
+enum Rank {
     AS(1),
     DEUX(2),
     TROIS(3),

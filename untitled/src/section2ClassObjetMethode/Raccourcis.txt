@@ -120,6 +120,8 @@ F8  => step over dans debbuger | exécute la ligne sans entré dans les détaill
 
 F7  => step in  | entre dans les détaille de la ou les methode lancé sur la ligne
 
+Alt F12  => ouvre un Terminal
+
 java -cp target\classes com.tuto.game.GuessingGame => Lancer un code depuis le Terminal -cp = change path| retrouve arboressance du build target\classes puis ajoute le path du package de la class com.tuto.game.GuessingGame EX user doit ecrire qqc dans la console String input = System.console().readLine("Enter a number: ");
 
 
