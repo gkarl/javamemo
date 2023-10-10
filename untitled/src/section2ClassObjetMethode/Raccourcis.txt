@@ -36,7 +36,7 @@ Ctrl Shift -> => Agrandit la selection vers la droite
 
 Ctrl Shift <- => Agrandit la selection vers la gauche
 
-Ctrl O  => pour voire toutes les methods @Override de la class mére
+Ctrl O  => pour voire toutes les methods @Override de la class mére | racourci pour faire un override de la methode toString()
 
 Ctrl N => Navigation = Tape le nom de la class ou on veut aller
 
