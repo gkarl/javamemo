@@ -1,4 +1,4 @@
-package section8OOP.introducingProgrammerClass119;
+package section8OOP.implementingOtherEmployeesClasses120;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -7,9 +7,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Réfléchis, comment pouvoir réutiliser une grande partie du code qui est dans la class Main en procedural
- */
 class Programmer {
 
     private String lastName;
@@ -26,28 +23,28 @@ class Programmer {
     private final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance(Locale.US);
     private final DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("M/d/yyyy"); // utilisé avec la ligne parse String en LocaleDate formate date moi/jour/année
 
-    public Programmer(String personText) { // on va passer au constructeur la 1er grande regex
-        Matcher peopleMat = peoplePattern.matcher(personText); // Prépare cherche regex match data text
+    public Programmer(String personText) { // on va passer au constructeur la une ligne du texte data bases origin
+        Matcher peopleMat = peoplePattern.matcher(personText); // crée le Matcher capable d'analyse cet String d'1 personne (arg du constructeur)
         if (peopleMat.find()) { // lance la recherche de match | Dans le constructeur va passer 1 seule personne donc pas besoin de While un if suffis
-            this.lastName = peopleMat.group("lastName"); // stock la valeur récupérer du match pour valorisé un field de la class Programmer
+            this.lastName = peopleMat.group("lastName"); // stock la valeur récupérer du match pour valoriser un field de la class Programmer
             this.firstName = peopleMat.group("firstName");
             this.dob = LocalDate.from(dtFormatter.parse(peopleMat.group("dob"))); // pour parse String en LocaleDate
 
-            Matcher progMat = progPat.matcher(peopleMat.group("detail")); // on cherche à extraire la dernière partie dans group name detail
-            if (progMat.find()) { // si matcher trouve match groupe name detail alors on peut extraire les éléments qui sont dedans
-                this.linesOfCode = Integer.parseInt(progMat.group("locpd"));  // valorise les fields de la class avec les valeurs des éléments dans detail
-                this.yearsOfExp = Integer.parseInt(progMat.group("yoe"));
+            Matcher progMat = progPat.matcher(peopleMat.group("detail")); //crée le Matcher capable d'analyse la fin du String d'1 personne name groupe detail spécifique pour chaque role ici programmeur  {locpd=2000, yoe=3, iq=140}
+            if (progMat.find()) { // on dit au Matcher de trouver (find()) ces détails. if() tant qu'il trouve ces details
+                this.linesOfCode = Integer.parseInt(progMat.group("locpd"));  // il peut les extraire on le convertit en int et le stock dans field (propriété de la class)
+                this.yearsOfExp = Integer.parseInt(progMat.group("yoe")); // idem ...
                 this.iq = Integer.parseInt(progMat.group("iq"));
             }
         }
     }
 
-    public int getSalary() { // la ligne de calcul des salaires dans le main() devient une methode | seule partie qui effectue un calcul
-        return 3000 * linesOfCode + yearsOfExp + iq; // meme si linesOfCode, yearsOfExp, iq égale 0 getSalary() return 3000 => pas besoin de else
+    public int getSalary() {
+        return 3000 * linesOfCode + yearsOfExp + iq; // on fait des math avec pour obtenir le salaire selon nos règles arbitraires différentes sur chaque role
     }
 
     @Override
     public String toString() {
-        return String.format("%s, %s: %s", lastName, firstName, moneyFormat.format(getSalary())); // permettra de print ces valeurs | le return de la methode getSalary est mis au format monétaire
+        return String.format("%s, %s: %s", lastName, firstName, moneyFormat.format(getSalary())); // permettra de print ces valeurs dans le main() | le return de la methode getSalary est mis au format monétaire
     }
 }
