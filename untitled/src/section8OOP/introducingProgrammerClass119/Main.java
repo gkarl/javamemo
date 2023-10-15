@@ -1,4 +1,4 @@
-package section8OOP.completingOtherEmployeesCases118;
+package section8OOP.introducingProgrammerClass119;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -6,19 +6,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Section 8 More OOP - 118 Completing Other Employee Cases
+ * Section 8 More OOP - 119 Introducing a Programmer Class
  *
- * Suite => Il refait le meme code pour les autres professions dans le main()
+ * Suite => transformer code procedural en OOP
  *
- * Veux nous montrer à quoi ressemble du code procédural débutant (On a bcp de code dupliqué) = sans utiliser aucun des avantages de OOP
- * Bordel (bcp de code dans la meme méthode), Demande bcp d'attention et d'effort du cerveau pour le comprendre et suivre et difficile à maintenir
- * Rendre un code simple demande bcp d'analyse
+ * l'algorithme pour calculer le salaire avec les détails {locpd= , yoe= , iq= } sont différent selon le rôle (job) dans data texte
+ * => On décide de créer différentes classes par rôle, car nous avons un comportement différent
  */
 class Main {
 
     public static void main(String[] args) {
 
-        String people = """  
+        String peopleText = """  
             Flinstone1, Rod, 6/2/2000, Programmer, {locpd=2000, yoe=3, iq=140}
             Flinstone2, Rod, 6/2/2000, Programmer, {locpd=3000, yoe=4, iq=340}
             Flinstone3, Rod, 6/2/2000, Programmer, {locpd=4000, yoe=5, iq=120}
@@ -34,7 +33,7 @@ class Main {
 
         String peopleRegex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+),\\s*\\{(?<detail>.*)\\}\\n"; //** rajoute ça \s*\{(?<detail>.*)\} pour prendre en compte le field à la fin de chaque ligne
         Pattern peoplePattern = Pattern.compile(peopleRegex);
-        Matcher peopleMat = peoplePattern.matcher(people);
+        Matcher peopleMat = peoplePattern.matcher(peopleText);
 
         String progRegex = "\\w+\\s*\\=(?<locpd>\\d+)\\,\\s*\\w+\\s*\\=(?<yoe>\\d+)\\,\\\s*\\w+\\s*\\=(?<iq>\\d+)"; //** il crée une regex particuliere car le field varie en fct des metier | ex ici pour programmer
         Pattern progPat = Pattern.compile(progRegex);
@@ -52,7 +51,8 @@ class Main {
         while (peopleMat.find()) { // ça va passer sur chaque ligne du texte people car la regex peopleRegex passe sur chaque ligne
             totalSalaries += switch (peopleMat.group("role")) { // il switch case sur le capture groupe name "role" de la Regex | additionne les retoure de salaire => salaire total versé aux employés
                 case "Programmer" -> {
-                    Matcher coderMat = progPat.matcher(peopleMat.group("detail")); // qd on est sur la ligne case ou c'est un Programmer alors on va utiliser un Matcher pour analyser {locpd= , yoe= , iq= } | doit le mettre dans While/swhitch/case car chaque field peut etre différent
+                    Programmer programmer = new Programmer(peopleMat.group()); // crée une instance de la class Programmer avec arg demandé par constructeur
+                    /*Matcher coderMat = progPat.matcher(peopleMat.group("detail")); // qd on est sur la ligne case ou c'est un Programmer alors on va utiliser un Matcher pour analyser {locpd= , yoe= , iq= } | doit le mettre dans While/swhitch/case car chaque field peut etre différent
                     int salary = 0; // Il préfére utiliser une variable qui va nous permettre d'éviter de multiplier les yield (return)
                     if (coderMat.find()) {  // Demander de trouver le name groupe si non ne marche pas
                         int locpd = Integer.parseInt(coderMat.group("locpd")); //** Extraire dans 1 variable les valeurs des éléménts dans les fields | La regex sort un String que l'on convertit en int pour pouvoir faire des calcules mathématique
@@ -66,7 +66,9 @@ class Main {
                     String firstName = peopleMat.group("firstName");
                     String lastName = peopleMat.group("lastName");
                     System.out.printf("Programmer firstName: %s lastName: %s salary: %s%n", firstName, lastName, NumberFormat.getCurrencyInstance().format(salary)); // print nom prénom salaire format monétaire sur la meme ligne
-                    yield salary;
+                    yield salary;*/
+                    System.out.println(programmer.toString()); // Pour print ce qu'on récupère depuis la class Programmer qu'on a défini dans la methode toString Override
+                    yield programmer.getSalary();
                 }
                 case "Manager" -> {
                     Matcher managerMat = managerPat.matcher(peopleMat.group("detail"));
@@ -123,6 +125,5 @@ class Main {
 
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance(Locale.US);
         System.out.printf("le total des salaires format monétaire %s%n", currencyInstance.format(totalSalaries)); // print totalSalaries au format monétaire | RQ on ne met plus %s mais %d
-
     }
 }

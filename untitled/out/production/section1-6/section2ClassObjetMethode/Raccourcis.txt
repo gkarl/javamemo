@@ -60,6 +60,8 @@ Ctrl Shift T => Pour naviguer vers le test de la Class ouverte
 
 Ctrl Shift J => remonter la ligne du dessous à la position du curseur EX remonter un else juste derriére } | J pour join
 
+Ctrl Shift U => Switch une select majuscule/minuscule
+
 Ctrl Shift F8 => fenetre qui affiche tous les points d'arret qu'on a mis
 
 
