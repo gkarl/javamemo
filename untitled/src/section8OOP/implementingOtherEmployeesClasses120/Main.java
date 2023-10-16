@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
  * Section 8 More OOP - 120 Implementing the Other Employee Classes
  *
  * Suite => on fait pareil pour les autres roles (job) ont leurs crée une class et transfére le code qui est dans Main
+ * Toujours pour calculer la somme des salaires que doit payer l'entreprise avec des methode de calcul différente our chaque role (job)
  */
 class Main {
 
@@ -68,7 +69,7 @@ class Main {
                     yield salary;*/
                     Programmer programmer = new Programmer(peopleMat.group()); //  si le poste est un programmer instancie un nell programmer et le constructeur lui passe une ligne du data text représentant un analyst (peopleMat.group()) => Thread entre dans la class programmer pour ça
                     System.out.println(programmer.toString()); // Pour print ce qu'on récupère depuis la class Programmer qu'on a défini dans la methode toString Override
-                    yield programmer.getSalary(); // return le calcul du salire pour programmer
+                    yield programmer.getSalary(); // return le calcul du salaire pour programmer
                 }
                 case "Manager" -> {
                     /*Matcher managerMat = managerPat.matcher(peopleMat.group("detail"));
