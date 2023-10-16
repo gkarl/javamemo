@@ -77,6 +77,8 @@ Ctrl Alt N  => défait la factorisation (place le curseur sur l'utilisation de l
 
 Ctrl Alt T  => Mettre une selection de code dans un bloc if | else if | while | for | try/catch | try/finally | synchronized | Runnable ...
 
+Ctrl Alt O  => clean les imports non utilisés
+
 Ctrl Alt Enter => Commencer une nell ligne au-dessus de la ou est le curseur
 
 Shift Enter  => commencer une nell ligne en dessous de la ou est le curseur
@@ -111,7 +113,9 @@ Clic D / Refactor / inline (Introduce) field / Menu déroulant = field déclarat
 
 Clic D / Refactor / Introduce Constant => C'est généralement une mauvaise idée de hard code un chiffre on le select pour en faire une Constante | Nommerles constante en majuscule
 
-clic D (sur le type d'un attribut) / Refactor / type migration => lorsqu'on a fait un Enum pour cette attribut et quon veut les associer  | Shift Ctrl F6
+clic D  / Refactor / type migration => clic droit sur le type d'un attribut lorsqu'on a fait un Enum pour cette attribut et quon veut les associer  | Shift Ctrl F6
+
+clic D / Refacteur / Pull Members Up  => clic droit sur le nom du field pour le déplacer vers la class mére | nous présente ici une liste à cocher de tous les soi-disant membres (fields, methodes) de cette classe | marche aussi en shift selectionant plusieurs lignes de fields
 
 Select code ( => ça entoure ce code de parenthese
 
