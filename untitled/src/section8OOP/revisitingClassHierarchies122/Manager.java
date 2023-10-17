@@ -15,25 +15,24 @@ class Manager extends Employee {
     private  int orgSize = 0;
     private int directReports = 0;
 
-    private final String peopleRegex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+),\\s*\\{(?<detail>.*)\\}\\n";
-    private final Pattern peoplePattern = Pattern.compile(peopleRegex);
+    /*private final String peopleRegex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+),\\s*\\{(?<detail>.*)\\}\\n";
+    private final Pattern peoplePattern = Pattern.compile(peopleRegex);*/
     String managerRegex = "\\w+\\s*\\=(?<orgSize>\\d+)\\,\\s*\\w+\\s*\\=(?<dr>\\d+)";
     Pattern managerPat = Pattern.compile(managerRegex);
-    private final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance(Locale.US);
-    private final DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+   /* private final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+    private final DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");*/
 
     public Manager(String personText) {
-        Matcher peopleMat = peoplePattern.matcher(personText);
+        /*Matcher peopleMat = peoplePattern.matcher(personText);
         if (peopleMat.find()) {
             this.lastName = peopleMat.group("lastName");
             this.firstName = peopleMat.group("firstName");
-            this.dob = LocalDate.from(dtFormatter.parse(peopleMat.group("dob")));
-
-            Matcher managerMat = managerPat.matcher(peopleMat.group("detail"));
-            if (managerMat.find()) {
-                this.orgSize = Integer.parseInt(managerMat.group("orgSize"));
-                this.directReports = Integer.parseInt(managerMat.group("dr"));
-            }
+            this.dob = LocalDate.from(dtFormatter.parse(peopleMat.group("dob")));*/
+        super(personText);
+        Matcher managerMat = managerPat.matcher(peopleMat.group("detail"));
+        if (managerMat.find()) {
+            this.orgSize = Integer.parseInt(managerMat.group("orgSize"));
+            this.directReports = Integer.parseInt(managerMat.group("dr"));
         }
     }
 
@@ -41,8 +40,8 @@ class Manager extends Employee {
         return 3500 * orgSize * directReports; // meme si linesOfCode, yearsOfExp, iq égale 0 getSalary() return 3000 => pas besoin de else
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return String.format("%s, %s: %s", lastName, firstName, moneyFormat.format(getSalary())); // permettra de print ces valeurs | le return de la methode getSalary est mis au format monétaire
-    }
+    }*/
 }

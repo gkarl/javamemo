@@ -1,4 +1,4 @@
-package section8OOP.revisitingClassHierarchies122;
+package section8OOP.completingEmployeeClassHierarchy123;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -8,10 +8,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *  Transforme interface en super class qui va etre hérité par Programmer, Manager, Analyst, CEO
- *  Tout ce code est commun aux class et est déplacé vers cet super class mére dont elles héritent pour éviter d'avoir du code redondant
+ * Section 8 More OOP - 123 Completing the Employee Class Hierarchy
+ *
+ * interface VS super Class (héritage) :
+ *
+ * - Interface  =>   Ce que je considérerai comme une approche plus légère. Si chacune de vos classes auxquelles vous appliquez l'interface
+ *  - n'a pas de détails d'implémentation en communs**  (methodes implémenté de la meme façon) les uns avec les autres
+ *  - et n'ont pas non plus de données et les données dans ce cas seraient les fields en commun
+ * Vous pouvez donc simplement adopter une approche d'interface pure
+ *
+ * - super Class (héritage)==  => D'un autre côté, si vos classes partagent
+ *  - des données (fields en commun)
+ *  - et/ou des détails d'implémentation, (methodes implémenté de la meme façon)
+ * je veux bien envisager, concidérer la possibilité** d’introduire une super classe.
+ *  - surtout si vous finissez par avoir une bonne somme de duplication de code,
+ * alors vous devriez vraiment envisager de le faire car cette duplication de code est
+ * est une mauvaise chose et cela devrait généralement être évité,
+ *
+ *
  */
 class Employee {
+
     protected String lastName; // field doivent etre protected ou public pour etre accéssible par class enfant (sub-class)
     protected String firstName;
     protected LocalDate dob;
@@ -41,5 +58,4 @@ class Employee {
     public String toString() {
         return String.format("%s, %s: %s", lastName, firstName, moneyFormat.format(getSalary())); // permettra de print ces valeurs dans le main() | le return de la methode getSalary est mis au format monétaire
     }
-
 }
