@@ -1,6 +1,7 @@
-package section8OOP.dealingWhithNullCase124;
+package section8OOP.introAbstractClasses125;
 
-import section8OOP.completingEmployeeClassHierarchy123.*;
+
+import section8OOP.dealingWhithNullCase124.*;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -8,21 +9,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Section 8 More OOP - 124 Dealing with the Null Case
+ * Section 8 More OOP - 125 Introducing Abstract Classes
  *
- * Null pointer exception = ce qui signifie simplement que vous avez essayé d'appeler une méthode sur un objet qui ne pointe nulle part
+ * Suite => Factorisation du code grace au concept Abstract Classes pour calculer la somme des salaires que doit payer l'entreprise avec des methode de calcul différente our chaque role (job)
  *
- * psychomatic complexity = c'est une mesure metrique qui peut etre traqué pour donner une idée combien une class est complexe, qd on rajoute des bloc if() notre score s'agrave
- *
- * Methode 1 => Faire une instance avec la super class pour remplacer null
- *
- * Methode 2 => Vérifie Si la variable qui appel les methode n'est pas null alors on le fait | if (employee != null) { }
- *
- * Methode 3 => Crée une une class factice leçon suivante
- *
- * Methode 4 => Nouveauté java c'est de ne plus travailler avec null mais plutot de return ce qu'on appel un optionel
- *
- *
+ * 1/ On veut aussi pouvoir caculer les Bonus getBonus() = Salaire + 10%
+ * 2/ Comme c'est du code commun aux class on va le mettre dans la super class Employee
+ * 3/ On veut forcer (provoque une erreur) les autres dev à implementer override getSalary() sur les class filles car chaque type d'employee a sa methode de calcul de salaire | EX qq1 veut définir un nell type d'employé => force une methode de calcule particuliere pour lui
+ * Rq une interface ne ferais pas l'affaire car comme gerSalary() est également sur la super class c'est comme si la class fille l'avait implémenté
+ * => abstract class et abstract methode
  */
 class Main {
 
@@ -74,13 +69,11 @@ class Main {
                 case "Manager" -> new Manager(peopleMat.group());
                 case "Analyst" -> new Analyst(peopleMat.group());
                 case "CEO" -> new CEO(peopleMat.group());
-                //default -> null;  // Il doit donc renvoyer quelque chose qui peut représenter un objet si on met 0 erreur | ce code actuel peut lever une exception erreur car si le switch return null on est entré dans aucun case on ne peut appeler une fct dessus (ex getSalary()) => on vera comment résoudre ça dans une autre leçon = empty class
-                //_____________Methode1____________________
-                default -> new Employee(peopleMat.group()); //** default ne return plus un objet null mais une instance Employee
+                default -> null;  // Il doit donc renvoyer quelque chose qui peut représenter un objet si on met 0 erreur | ce code actuel peut lever une exception erreur car si le switch return null on est entré dans aucun case on ne peut appeler une fct dessus (ex getSalary()) => on vera comment résoudre ça dans une autre leçon = empty class
+                //default -> new Employee(peopleMat.group()); // Methode 1 Méthode default ne return plus un objet null mais une instance Employee car si return null on ne peut plus appeler les methodes qui sont juste aprés => erreur
             };
             //Au lieu de le répéter dans chaque case maintenant ce code n'est écrit qu'1 foi
-            //_____________Methode2____________________
-            if (employee != null) { //** Methode2 si la variable (instance) employee n'est pas égale à null on entre dans se block de code et lance des methodes plus d'erreur
+            if (employee != null) { // Methode2 si la variable (instance) employee n'est pas égale à null on entre dans se block de code et lance des methodes plus d'erreur
                 System.out.println(employee.toString()); // Toute les class hérite de la super class Object ou réside la méthode toString()
                 totalSalaries += employee.getSalary(); // la variable employee qui stock le return du switch est de type Employee (interface) elle peut lancer uniquement la seule methode présente sur cette interface getSalary()
             }
