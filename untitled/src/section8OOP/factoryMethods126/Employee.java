@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * Section 8 More OOP - 126 Factory Methods
  *
- * Factory Methode = methode static pas besoin d'etre instancier
+ * Factory Methode = methode return une instance de Employee + static pas besoin d'etre instancier
  *
  * Des methode static ne peuve pas interagir avec des élémént (methode ou field) non static
  */
