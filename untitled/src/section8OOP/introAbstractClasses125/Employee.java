@@ -8,8 +8,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * - Interface => si on a qq class qui implément 1 methode ou plus qui prend des input ou output du mem type mais interieurment elles font qqc de différent** ex GetSalary()
- *   et si ces class n'on rien d'autre en commun comme des (methode) implémenté, ou des datas (attributs)** en commun, ex Hé, nous savons tous comment fournir un salaire.
+ * - Interface => si on a qq class qui implément 1 methode ou plus qui prend des input ou output du mem type mais interieurement elles font qqc de différent ex GetSalary()
+ *   et si ces class n'on rien d'autre en commun comme des (methode) implémenté, ou des datas (attributs) en commun, ex Hé, nous savons tous comment fournir un salaire.
  *   une interface peut etre la chose à faire pour relier ses class ensemble afin que vous puissiez traiter  tous de la même chose du point de vue du code client =  Main qui utilise ce que les autres class peuvent fournir (ex elles peuvent fournir toString() et getSalary() )
  *   il suffit de faire référence à eux (instanciéer les class qui implemente interface) tous via cette interface type
  *
