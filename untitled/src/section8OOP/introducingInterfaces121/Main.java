@@ -1,6 +1,5 @@
 package section8OOP.introducingInterfaces121;
 
-import section8OOP.compagnie.IEmployee;
 
 import java.text.NumberFormat;
 import java.util.Locale;

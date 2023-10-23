@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class Employee implements IEmployee{
+abstract class Employee implements IEmployee{
 
     protected String firstName;
     protected String lastName;

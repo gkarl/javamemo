@@ -1,6 +1,6 @@
 package section8OOP.compagnie;
 
-public interface Flyer {
+interface Flyer {
     void fly();
 
     int getHoursFlows();

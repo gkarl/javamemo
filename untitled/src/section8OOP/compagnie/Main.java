@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
         System.out.println("*************** Lesson 117");
