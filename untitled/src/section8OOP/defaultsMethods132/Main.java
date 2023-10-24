@@ -1,5 +1,4 @@
-package section8OOP.compositionVersusInheritance131;
-
+package section8OOP.defaultsMethods132;
 
 
 import java.text.NumberFormat;
@@ -7,9 +6,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Section 8 More OOP - 131 Composition Versus Inheritance
- */
 class Main {
 
     public static void main(String[] args) {
@@ -36,11 +32,17 @@ class Main {
     // Pattern peoplePattern = Pattern.compile(peopleRegex);
     Matcher peopleMat = Employee.PEOPLE_PATTERN.matcher(peopleText);
 
-    //__________5_____________Si je veux que mon instance de CEO soit de type Pilot (soit un pilote) | on a une erreur si on ne met pas les triples guillemet avec le meme pattern de text qui match la regex utilisé dans le constructeur de CEO
-    Flyer flyer = new CEO("""
+    //Si je veux que mon instance de CEO soit de type Pilot (soit un pilote) | on a une erreur si on ne met pas les triples guillemet avec le meme pattern de text qui match la regex utilisé dans le constructeur de CEO
+    Flyer flyer2 = new CEO("""
                 Mich, Michou, 4/4/1915, CEO, {avgStockPrice=3000}
                 """);
-    flyer.fly(); // Le CEO vole
+    flyer2.fly(); // Le CEO vole
+
+    //__________3__________
+    Programmer coder = new Programmer("""
+                Charles, Boudouar, 4/4/1915, CEO, {avgStockPrice=3000}
+                """);
+    coder.cook("Hamburger"); // Une instance de la class Programmer peut utiliser les méthodes déja implémenté dans une interface | Ce programmeur cuisine un Hamburger <=> multi héritage
 
     String progRegex = "\\w+\\s*\\=(?<locpd>\\d+)\\,\\s*\\w+\\s*\\=(?<yoe>\\d+)\\,\\\s*\\w+\\s*\\=(?<iq>\\d+)"; // il crée une regex particuliere car le field varie en fct des metier | ex ici pour programmer
     Pattern progPat = Pattern.compile(progRegex);
@@ -56,7 +58,7 @@ class Main {
 
     int totalSalaries = 0;
     //Employee employee = null;  // il change le retoure du switch dans cette variable de type Employee (interface)
-    // ___________4____________ la methode createEmployee() return maintenant le type IEmployee interface pour match avec la Lambda cette variable doit etre de type également de type IEmployee pour stocker le lancement de createEmployee()
+    //la methode createEmployee() return maintenant le type IEmployee interface pour match avec la Lambda cette variable doit etre de type également de type IEmployee pour stocker le lancement de createEmployee()
     IEmployee employee = null;
     while (peopleMat.find()) { // ça va passer (boucle) sur chaque ligne du texte people
         // remplace le switch par un appel à la methode createEmployee() qui le contiend
