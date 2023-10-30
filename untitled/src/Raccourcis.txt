@@ -80,7 +80,7 @@ Ctrl Alt <-  => Navigate back la ou on était juste avant
 
 Ctrl Alt V  => Mettre une selection de code (ou curseur en fin de ligne) dans une variable sur une ligne propre, la variable uniquement sera appelé à l'endroit original
 
-Ctrl Alt M  => Factorisation select plusieurs lignes de code identiques pour les mettre dans une methode | IDE nous propose s'il trouve ce Pattern à plusieurs endroits de les remplacer par cette fct
+Ctrl Alt M  => Factorisation select plusieurs lignes de code identiques pour les mettre dans une methode | IDE nous propose s'il trouve ce Pattern à plusieurs endroits de les remplacer par cette fct | fait une methode avec un bloc de code ex une boucle for avec bcp de code
 
 Ctrl Alt N  => défait la factorisation (place le curseur sur l'utilisation de la variable)
 

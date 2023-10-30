@@ -1,30 +1,32 @@
-package section9Collection.listBasics142;
-
+package section9Collection.linkedLists143;
 
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Section 9 Collection - 142 List Basics
+ * Section 9 Collection - 143 Linked Lists
  *
- * Les List sont donc idéales pour
- * - stocker que des objets => on peut le solutionner en utilisant des Wrapper (Integer ...) pour convertir un primitif en Object
- * - pour les stocker dans l'ordre.
- * - les List peuvent s'agrandir ou se rétrécir de manière dynamique (ce n'est pas le cas d'1 array)
+ * On va utiliser LinkedLists à la place de ArrayList
+ * ça ce fait tres facilement car on a stocké dans une variable de type généraliste List (interface) qui est associé aussi bien à la class ArrayList que LinkedList
+ * nous devrions préférer stocker des instances d'objets dans leurs interfaces lorsqu'il existe un interface à utiliser
  *
- *  C'est la principale distinction d'une List par rapport à certains des autres types de collections que nous examinerons
+ * ArrayList => utilise un array
+ * - nous devons l'initialiser avec une taille ou avec des données réelles.
+ * - Et une fois initialisé, il ne peut plus être modifié.
+ *   Donc, si nous réalisons que le tableau n'est pas assez grand, nous devrons créer un nouveau array avec une taille plus grande.
+ *   Puis copier toutes les données de son array d'origine dans le nouveau array, puis laissez ce array d'origine est garbage collected.
+ *   Demande bcp de ressource
  *
- * List elle-même est une interface vous devez créer une instance d'une classe qui implémente l'interface de List 2 choix de class:
- * - LinkList
- * - et ArrayList (la plus populaire)
- *
- * - 1/ populating the Collection
- * - 2/ procecing the collection
+ * LinkedList
+ * - n'est pas construit à partir d'un array et peut changer de taille
+ * - Il stocke l'adresse des nouveaux emplacements de mémoire dans l'emplacement mémoire précédent et inversement = Doubly Linked list (une liste doublement chaînée)
+ *   ces nell allocation mémoire sont aussi couteuses mais moins que de recrée un Array
  *
  */
 class Main {
@@ -81,12 +83,13 @@ class Main {
         //la methode createEmployee() return maintenant le type IEmployee interface pour match avec la Lambda cette variable doit etre de type également de type IEmployee pour stocker le lancement de createEmployee()
         IEmployee employee = null;
 
-        //___________1 On crée la List à l'exterieur de la boucle while car si non la List continuera à être réinitialisée et nous n'accumulerons jamais tous les objets
-        List<IEmployee> employees = new ArrayList<>(); // on instancie la class ArrayList qui contiend l'interface List |  Préférer stocker les instances dans un type plus générique possible (interface List) le type est dans <> | On va y stocker des employee de type IEmployee (interface) => évite qu'on entre d'autres types d'objet => erreur
+        //On crée la List à l'exterieur de la boucle while car si non la List continuera à être réinitialisée et nous n'accumulerons jamais tous les objets
+        //_________1* sans modifier le code on peut remplacer new ArrayList<>() par new LinkedList<>() car la variable qui le stock est de type List (interface)
+        List<IEmployee> employees = new LinkedList<>(); //                         on instancie la class ArrayList qui contiend l'interface List |  Préférer stocker les instances dans un type plus générique possible (interface List) le type est dans <> | On va y stocker des employee de type IEmployee (interface) => évite qu'on entre d'autres types d'objet => erreur
         while (peopleMat.find()) { // ça va passer (boucle) sur chaque ligne du texte people
             // remplace le switch par un appel à la methode createEmployee() qui le contiend
             employee = Employee.createEmployee(peopleMat.group()); // les employee crée son stocké dans cette variable employee de type IEmployee (interface)
-            //___________2 On veut récupérer les employee qui sont crée 1 à 1 pour les insérer dans notre List
+            // On veut récupérer les employee qui sont crée 1 à 1 pour les insérer dans notre List
             employees.add(employee);
             if (employee instanceof Programmer prog) {
                 System.out.printf("Nombre de ligne de code = %d, Nbre d'années d'expérience = %d, QI = %d %n",prog.getLinesOfCode(), prog.getYearsOfExp(), prog.getIq());
@@ -123,7 +126,7 @@ class Main {
             //}
         }
 
-        //___________3 Pour nous montrer ce qu'on peut faire avec une List il fait un for loop adapté aux List
+        //Pour nous montrer ce qu'on peut faire avec une List il fait un for loop adapté aux List
         for (IEmployee worker : employees) {  // worker est la variable dans laquelle nous allons conserver les employés pendant que nous les parcourons.
             System.out.println(worker.toString()); // Toute les class hérite de la super class Object ou réside la méthode toString()
             totalSalaries += worker.getSalary();  // la variable employee qui stock le return du switch est de type Employee (interface) elle peut lancer uniquement la seule methode présente sur cette interface getSalary()
