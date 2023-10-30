@@ -1,4 +1,5 @@
-package section9Collection.loopingWithIterators144;
+package section9Collection.looseEndsOfLists145;
+
 
 
 import java.text.NumberFormat;
@@ -7,15 +8,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Section 9 Collection - 144 Looping with Iterators
+ * Section 9 Collection - 145 Loose Ends of Lists
  *
- * On veut supprimer des éléments d'une List (à partir d'éléments dans une autre List) pendant qu'on itére sur cette List
- * La boucle for classique utilisé sur les Collections ne marchera pas dans ce cas for (IEmployee worker : employees) { } => c'est comme avoir 2 Threads (gas) qui travaille en meme temps un qui compte et l'autre qui les supprime pendans ce temps
- * On utilisera une autre methode de la boucle for avec un Iterator dans ce cas c'est une methode old school
- * RQ on verra qu'il y a une meilleur façon de le faire avec les Lambda
- *
- * Ctrl Alt M met chaque boucle for dans sa methode respective
- * => généralement pas permettre à mes méthodes ai plus que, 10 à 15 lignes de code
+ * Autre maniéres abréger d'ajouter des éléments à une List ou supprimer des éléments de la List
+
  *
  */
 class Main {
@@ -73,7 +69,7 @@ class Main {
         IEmployee employee = null;
 
         //On crée la List à l'exterieur de la boucle while car si non la List continuera à être réinitialisée et nous n'accumulerons jamais tous les objets
-        //_________1* sans modifier le code on peut remplacer new ArrayList<>() par new LinkedList<>() car la variable qui le stock est de type List (interface)
+        //sans modifier le code on peut remplacer new ArrayList<>() par new LinkedList<>() car la variable qui le stock est de type List (interface)
         List<IEmployee> employees = new LinkedList<>(); //                         on instancie la class ArrayList qui contiend l'interface List |  Préférer stocker les instances dans un type plus générique possible (interface List) le type est dans <> | On va y stocker des employee de type IEmployee (interface) => évite qu'on entre d'autres types d'objet => erreur
         while (peopleMat.find()) { // ça va passer (boucle) sur chaque ligne du texte people
             // remplace le switch par un appel à la methode createEmployee() qui le contiend
@@ -81,7 +77,7 @@ class Main {
             // On veut récupérer les employee qui sont crée 1 à 1 pour les insérer dans notre List
             employees.add(employee);
 
-            //____________0 Ce code n'est pas présent pour print les détail en fct de chaque role
+            //Ce code n'est pas présent pour print les détail en fct de chaque role
             /*if (employee instanceof Programmer prog) {
                 System.out.printf("Nombre de ligne de code = %d, Nbre d'années d'expérience = %d, QI = %d %n",prog.getLinesOfCode(), prog.getYearsOfExp(), prog.getIq());
             } else if (employee instanceof  Manager manag) {
@@ -117,13 +113,14 @@ class Main {
             //}
         }
 
-        //___________1 il crée une list de type String avec les noms des employees qu'on désire supprimer de la List principal employees
+        //____________Methode 1_______________
+        //il crée une list de type String avec les noms des employees qu'on désire supprimer de la List principal employees
         List<String> removalNames = new ArrayList<>();
         removalNames.add("Flinstone4");  // add() => methode qui permet d'ajouter des éléments à notre List
         removalNames.add("Rubble3");
         removalNames.add("Flinston3");
 
-        //-----------2 Si on avait voulu le faire avec la boucle for classique pour les Collections (ne marchera pas car 2 Thread concurrent) Lesson 143
+        //Si on avait voulu le faire avec la boucle for classique pour les Collections (ne marchera pas car 2 Thread concurrent) Lesson 143
         /*for (IEmployee worker : employees) {
             if (worker instanceof Employee) {  //  Ici on vérifie qu'on est de type Employee <=> dans le case ou un Programmer, Manager .. et pas le case default alors on entre dans le bloc | Si on lance sans ça plante car IDE repére la Lambda dans la methode createEmployee qui return 0 qui n'a pas de firstName ... et n'est donc pas un Employee en tant que tel et donc pas un IEmployee | autre methode worker.getClass().equals(Employee.class) ici pas tres utile car ça e prend pas en compte les hiérarchies
                 Employee tmpWorker = (Employee) worker; // Ctrl Alt V il crée une variable pour simplifier le if
@@ -134,7 +131,7 @@ class Main {
 
         }*/
 
-        //___________3* Methode de la boucle for avec Iterator => utile si on doit supprimer des éléments de la List pendant qu'on itére sur cette List
+        //Methode de la boucle for avec Iterator => utile si on doit supprimer des éléments de la List pendant qu'on itére sur cette List
         for (Iterator<IEmployee> it = employees.iterator(); it.hasNext(); ) { // 1er parti it est un Iterator permet d'accéder aux éléments de la List | 2em partie jusqu'a qd on itére hasNext() => methode qui prend le prochain élément de la List jusqu'à qu'il n'y en ait plus alors return false| 3em partie on ne met pas d'incrément
             IEmployee worker = it.next();  //next()  => methode de Iterator qui nous donnera le prochain élément de la List | on le stock dans une variable de type IEmployee
             // La suite du code est identique à ce qu'on aurais tenté avec une boucle for adapté aux collection
@@ -146,6 +143,22 @@ class Main {
                 }
             }
         }
+
+        //____________Methode 2_______________ Autre maniére abréger d'ajouter des éléments à une List
+        List<String> undesirables = List.of("Flinstone3", "Rubble2", "Flinston2"); // of() => permet de rentrer des élément dans la List
+
+        //____________Methode 2_______________Autre methode pour select les élément à supprimer et les supprimé
+        //1__________ Autre méthode pour supprimer des élément d'une liste
+        IEmployee first = employees.get(0); // get()  => récupérer les éléments de la List1 employees grace à l'indexe | puis les stoker dans une variable
+        IEmployee seconde = employees.get(1); // ici on a select les 3 1er employer de la data text
+        IEmployee third = employees.get(2);
+        //2__________ Supprime les élément de la List employees à partir de leur index défini juste haut dessus
+        employees.remove(first); // remove()  => methode de List qui permet de supprimer des éléments qu'on aura capturé au préalable dans une variable
+        employees.remove(seconde);
+        employees.remove(third);
+
+        //____________Methode 2.2_______________Autre methode pour select les élément à supprimer et les supprimé
+        employees.remove(1); // Il faut faire attention car en utilisant les autres methode la taille de la List à diminué
 
         //Pour nous montrer ce qu'on peut faire avec une List il fait un for loop adapté aux List
         for (IEmployee worker : employees) {  // worker est la variable dans laquelle nous allons conserver les employés pendant que nous les parcourons.
