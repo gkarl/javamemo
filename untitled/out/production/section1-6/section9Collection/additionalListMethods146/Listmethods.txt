@@ -1,0 +1,99 @@
+Les methodes pour une List
+________________________________________
+
+Initialisation d'une List :
+________Methode 1
+IEmployee[] employees = new ArrayList<>()  // par défault Java va choisir lui mme la taille de la List si on tépasse cette taille Java va recréer la List => couteux
+
+________Methode 2
+- List.of()  => pour valoriser la List à la création | la List deviens Unmodifiable une fois que cette List a été créé, nous ne pouvons pas ajouter ou nous ne pouvons rien en supprimer
+List<String> undesirables = List.of("Wilma5", "Barney", "Karl")
+
+List<String> newStrings = new ArrayList<>(); // Si on avait voulu modifier cette List Unmodifiable on aurait crée une nell List
+newString.addAll(undesirables); // On ajoute la List Unmodifiable dans la List modifiable
+OU
+List<String> undesirables = new ArrayList<>(List.of("Wilma5", "Barney", "Karl")); // la List Unmodifiable est mis en arg de la modifiable
+
+________Methode 3
+IEmployee[] employees = new ArrayList<>(new IEmployee[100]) => On décide nous meme la taille qu'aura la List à sa creation | Si on connait la taille qu'elle va faire il faut le faire
+
+________________________________________
+- add()  => Rajouter un élément à la List
+________Methode 1
+on le rajoute un élément à la fin de la List
+________Methode 2
+on le rajoute un élément à la List à l'index designé en arg de la methode
+employees.add(0, new Programmer("")); // rajoute un nell employée à l'index 0 de la List | ce qui va se passer ici, c'est que toutes ces autres personnes seront déplacées vers le bas,
+
+________________________________________
+- contains()  => Vérifier si un élément est contenu dans la List | Nous verrons cette methode plus en détail dans la prochaine leçon
+for (...) {
+    if (worker instanceof Employee tmpWorker) {
+        if (removalNames.contains(tmpWorker.firstName));
+
+________________________________________
+- addAll()  => Nous permet d'ajouter une collection entière à une liste déjà existante
+List<String> newStrings = new ArrayList<>();
+newStrings.addAll(undesirables);
+
+________________________________________
+- size()  => connaitre la taille de la List
+System.out.println(newStrings.size());
+
+________________________________________
+- clear()  => Tout ce qui se trouvait dans la Collection disparaîtra
+
+________________________________________
+- containAll()  => (voire leçon suivante)
+
+________________________________________
+- equals()  => Méthode hérité par tous les Objects (voire leçon suivante)
+
+________________________________________
+- hashCode()  => Méthode hérité par tous les Objects (voire leçon suivante)
+
+________________________________________
+- get()  =>  Nous passons en arg un index, puis cela nous donne un objet dans la List situé à cet index.
+IEmployee third = employees.get(2);  // on a stocké dans une variable le 3em élément de la List employees
+
+________________________________________
+- indexOf()  => return un int qui est l'index de l'élément dans la List
+employees.indexOf(third);  // on récupére à quel index cet élement ce trouve dans la List employee Ex 2
+
+________________________________________
+- isEmpty()  => renvoie simplement un booléen true ou false si la collection est vide ou non
+
+________________________________________
+- lastIndex()  => Une List peut contenir des doublons cette méthode l'index du dernier doublon de la List
+Rq Set n'autorise pas les doublons
+
+________________________________________
+- removeAll()  => prend en arg une List chaque élément qui se trouve dans la List entrante, si cet élément existe dans la List, il sera retiré de la List
+
+________________________________________
+- replaceAll()  => cas particulier (voire leçon suivante)
+
+________________________________________
+- retainAll()  => prend en arg une List (Collection) Cela vous donne donc l'intersection des 2 List
+
+________________________________________
+- set()  => permet de remplacer (update) un élément de la List en fonction d'1 index. Prend en arg1 index, arg2 élément à metttre à cet index
+employees.set(0, Employee.createEmployee("""Rubble, Betty, 4/4/1915, CEO, {} """);
+
+________________________________________
+- sort()  => Il nous permet de trier les éléments d'une Collection. (voire leçon suivante)
+
+________________________________________
+- subList()  => prend arg1 et arg2 2 index de la List return une List compris entre ces 2 index | le 2em index en arg est exclus
+List<IEmployee> subList = employees.suList(0, 3);
+
+________________________________________
+- toArray()  => convertit simplement notre List en un array (return un array)
+________Methode 1
+Object[] genericArray = employees.toArray(); // Ne pas utiliser cette methode à moins d'y etre obligé car retourne un array de type Object trop générique
+________Methode 2
+IEmployee[] otherArray = employees.toArray(new IEmployee[0]);  // Ici on convertit en array mais on choisit le type
+
+
+
+
