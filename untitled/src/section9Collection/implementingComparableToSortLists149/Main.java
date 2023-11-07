@@ -1,4 +1,4 @@
-package section9Collection.implementingComparatortoSortLists148;
+package section9Collection.implementingComparableToSortLists149;
 
 
 
@@ -8,9 +8,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Section 9 Collection - 148 Implementing Comparator to Sort Lists
+ * Section 9 Collection - 149 Implementing Comparable to Sort Lists
  *
- * On veux ranger les Employées par ordre alphabétique
+ * Methode de tries sort() :
+ *
+ * - Methode 1 = employees.sort(new Comparator<IEmployee>() {} => sort() prend en arg Comparator => instancie une class anonyme qui va implémenter interface Comparator (leçon précedente)
+ *
+ * - Methode 2 = Collections.sort() => prend arg1 List + arg2 Comparator (methode 1)
+ *
+ * - Methode 3 = undesirables.sort(Comparator.naturalOrder()); => Comparator.naturalOrder() est le comparator déja créée par JAva | on a pas besoin d'implementé l'interface Comparable avec sa methode compareTo() car c'est une List de String et les String implement l'interface Comparable
+ *
+ * - Methode 2+3 = Collections.sort(employees, Comparator.naturalOrder()); => sort() prend en arg une List et en 2em arg un Comparator (on utilise celui pret construit par Java) |
+ *                  ici la List est de type IEmployee elle doit implementer l'interface Comparable et Employee qui implements IEmployee doit override la methode compareTo() présent sur l'interface Comparable pour que ça marche
+ *                  compareTo() doit etre implementé avec du code pour que java comprenne sur quel field on trie
+ *
+ * - Methode 4 = Collections.shuffle(); => utile pour mélanger de façon random les élément d'1 List
+ *
  */
 class Main {
     public static void main(String[] args) {
@@ -150,9 +163,14 @@ class Main {
                 }
             }
         }
-
+        //_______________________Methode 3________________________________
         //Autre maniére abréger d'ajouter des éléments à une List
-        List<String> undesirables = List.of("Flinstone3", "Rubble2", "Flinston2"); // of() => permet de rentrer des élément dans la List
+        List<String> undesirables = new ArrayList<>(List.of("Flinstone3", "Rubble2", "Flinston2")); // of() => permet de rentrer des élément dans la List
+        undesirables.sort(Comparator.naturalOrder());  // sort() => prend en arg un Coparator | Au lieu de crée une class qui va implémenter cet interface Java fournit un Conparator qui pocéde une méthode naturalOrder() qui trie les String alphabétiquement Rq défault 10 arrive avant 10
+        //undesirables.sort(Comparator.reverseOrder());  // revertOrder()=> va dans le sens inverse que Alphabetique
+        System.out.println(undesirables);
+
+
 
         // Autre methode pour select les élément à supprimer et les supprimé
         // Autre méthode pour supprimer des élément d'une liste
@@ -167,12 +185,12 @@ class Main {
         // Autre methode pour select les élément à supprimer et les supprimé
         //employees.remove(1); // Il faut faire attention car en utilisant les autres methode la taille de la List à diminué
 
-
+        //_______________________Methode 1________________________________
         //Etape 1*_______________
         // Conseille pour un bon trie de retirer de la List Programmerzzz qui passe par la Lambda => ne peut pas etre de type Employee comme les autres (pas de firstname...)
         // moyen le plus rapide de mettre en place l'interface Comparator
         employees.sort((o1, o2) -> { // compare()  => seul methode de l'interface Comparator | Interface IEmployee ne sait rien des firstName lastName => on doit cast en Employee
-        //employees.sort(new Comparator<IEmployee>() {  // clic Droit IDE propose remplace with Lambda => affiche à la place la ligne juste au dessus | Possible car l'interface Comparable n'a qu'une seule methode  => on peur remplacer une class anonyme par une Lambda
+            //employees.sort(new Comparator<IEmployee>() {  // clic Droit IDE propose remplace with Lambda => affiche à la place la ligne juste au dessus | Possible car l'interface Comparable n'a qu'une seule methode  => on peur remplacer une class anonyme par une Lambda
             //Employee emp1 = (Employee) o1;
             //Employee emp2 = (Employee) o2;
             if (o1 instanceof Employee emp1 && o2 instanceof Employee emp2) { // Nous pouvons utiliser Pattern matching => pendant qu'on établit la condition si o1 est de type Employee on le convertir en type Employee | C'est possible car o1 est de IEmployee qui est une interface de Employee
@@ -183,6 +201,29 @@ class Main {
             }
             return 0;
         });
+        //_______________________________________________________________
+
+        //_______________________Methode 2________________________________
+        // Collections => class utilitaire qui pocéde la methode sort() => 1er arg List, 2em arg Comparator interface (Ctrl C Ctrl V le code methode 1 qui représente un comparator)
+        Collections.sort(employees, (o1, o2) -> {
+            if (o1 instanceof Employee emp1 && o2 instanceof Employee emp2) { // Nous pouvons utiliser Pattern matching => pendant qu'on établit la condition si o1 est de type Employee on le convertir en type Employee | C'est possible car o1 est de IEmployee qui est une interface de Employee
+                int lnameResult = emp1.lastName.compareTo(emp2.lastName);  // compareTo() => comparer 2 primitif (String) | Si o1 doit venir avant o2, alors nous devrions return -1 | Si o2 doit venir avant o1 nous devrions return +1 | S'ils sont tous les deux égaux, alors return 0
+                int fnameResult = emp1.firstName.compareTo(emp2.firstName);
+                return lnameResult != 0 ? lnameResult : fnameResult; // Ternaire si les firstName ne sont pas égaux (entre o1 et o2) return lnameResult si non fnameResult (comparaison des firstname) | permet d'avoir 2 niveau de comparaison si les lastName sont égaux il va aller comparer les firstName
+            }
+            return 0;
+        });
+        //_______________________________________________________________
+
+
+        //_______________________Methode 2 + 3________________________________
+        //Etape 1 ______________________
+        Collections.sort(employees, Comparator.naturalOrder()); // Erreur car Java ne sais pas comment on veut trier si c'est par firstName ... => utiliser interface Comparable => utilise 1 seul methode compareTo() permet aux class qui les implemente de savoir comment etre trié
+        //Collections.sort(employees, Comparator.reverseOrder()); // reverseOrder() => permet d'inverser l'ordre des trie
+        //_______________________________________________________________
+
+        //_______________________Methode 4________________________________
+        //Collections.shuffle(); // shuffle() => Aléatoirement permute List spécifiée en utilisant une source par défaut random | Ex trier List de carte de façon aléatoire pour le jeux du BlackJack
 
         //Pour nous montrer ce qu'on peut faire avec une List il fait un for loop adapté aux List
         for (IEmployee worker : employees) {  // worker est la variable dans laquelle nous allons conserver les employés pendant que nous les parcourons.
@@ -197,5 +238,6 @@ class Main {
 
     }
 }
+
 
 
