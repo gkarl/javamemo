@@ -1,0 +1,40 @@
+List<IEmployee> employees = new ArrayList<>(16);  // instancie un ArrayList de type List interface
+=> deviens
+Set<IEmployee> employees = new LinkedHashSet<>(16);  // instancie un HashSet de type Set interface
+
+LinkedHashSet  => permet comme HashSet de ne pas avoir de doublons et aussi de trier les éléments dans l'ordre d'arrivé du data texte | plus couteux que HashSet et moins rapide
+                  Utilise aussi la boucle for moderne pour itérer mais on ne peux récupérer des éléments du Set par leur index
+                  solution => On crée instancie un nell ArrayList en y mettant le Set => comme ça on peut faire un get() sur l'index => Pb couteux il ne faut pas que la List soit trop longue
+
+                    int totalSalaries = 0;
+                    IEmployee employee = null;
+                    List<IEmployee> employees = new LinkedList<>();
+                    while (peopleMat.find()) {
+                      employee = Employee.createEmployee(peopleMat.group());
+                      employees.add(employee);
+                    }
+                    newArrayList<>(employees).get(10);     //*  Créer un nell ArrayList et l'initialiser avec le Set <employees> + récupére élément à l'index 10
+                    IEmployee myEmp = employees.get(4);
+                    for (IEmployee worker : employees) {
+                                System.out.println(worker.toString());
+                                totalSalaries += worker.getSalary();
+                            }
+
+
+- Si on avait voulu rajouter comme condition au trie le role (sub-Class) on ajoute ça sur les methode equals() et hahsCode() de la super-class Employee
+
+                    @Override
+                        public boolean equals(Object o) {
+                            if (this == o) return true;
+                            if (o == null || getClass() != o.getClass()) return false;
+                            Employee employee = (Employee) o;
+                            return lastName.equals(employee.lastName) &&
+                             firstName.equals(employee.firstName) &&
+                              dob.equals(employee.dob) &&
+                              getClass().equals(o.getClass());  //*
+                        }
+
+                        @Override
+                        public int hashCode() {
+                            return Objects.hash(lastName, firstName, dob, getClass();  //*
+                        }
