@@ -1,0 +1,50 @@
+List<IEmployee> employees = new ArrayList<>();  // instancie un ArrayList de type List interface
+=> deviens
+Set<IEmployee> employees = new TreeSet<>();  // instancie un TreeSet de type Set interface
+
+- TreeSet =>  - en plus de filtrer les doublons, comme toutes les implémentations de Set,
+              - il ordonnera également les éléments naturellement donc essentiellement avec un ordre alphabétique.
+                TreeSet est appelé binary node si -1 l'élément descend sur arbre vers la Gauche ... 0 il est viré  => capacité à retrouver facilement un élément sans itérer sur tous les éléments
+
+Cependant, cet ordre peut être contrôlé par vous =>
+____________________Methode 1______________________________ OK
+ En utilisant l'interface Comparable qui contiend la methode compareTo() (comme on avait fait pour List voir leçon 149)
+
+ public abstract class Employee implements IEmployee {
+    @Override
+    public int compareTo(IEmployee 0) {    //* compareTo => seul méthode appartenant à l'interface Comparable | comme l'interface Comparable ici est extended par l'interface IEmployee arg est de type IEmployee
+        Employee other = (Employee) o;     //* On doit cast arg de compareTo() en Employee pour pouvoir accéder à ses fields
+        return this.lastName.compareTo(other.lastName);  //* compareTo() => return un int  +1 si o arrive aprés ordre alphabétique -1 si arrive avant et 0 si c'est le meme | On peut s'amuser à changer de field Ex met firstName à la place moi d'élément supprimé car en doublon
+    }
+ }
+
+ interface IEmployee extends Comparable { //*
+    public int getSalary();
+ }
+
+ class Main {
+     public static void main(String[] args) {
+        Set<IEmployee> employees = new TreeSet<>(); //*
+     }
+
+
+ ____________________Methode 2______________________________
+ Si on a pas implementé de Comparable on peut utiliser l'interface Comparator dispose d'1 seul méthode (fonctionnel) compareTo() => permet d'utiliser une Lambda (voire Lesson 148 avec List)
+
+  class Main {
+      public static void main(String[] args) {
+         Set<IEmployee> employees = new TreeSet<>((e1, e2) -> e1.firstName.compareTo(e2.firstName)); //* (e1, e2) -> => Lambda expression | Erreur car le Set est de type IEmployee et il n'a pas les fields firstName ou lastName à comparer => cast en Employee (il ne l'a pas fait)
+         Set<IEmployee> employees = new TreeSet<>((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()); // On aurait pu utiliser comme arg getSalary() car présent dans interface IEmployee | PB compareTo() prend en arg un Object et getSalary() returne un int  =>  utiliser le Wrapper Integer (voire ligne suivante)
+         Set<IEmployee> employees = new TreeSet<>((e1, e2) -> Integer.compare(e1.getSalary(), e2.getSalary()));  // Solution si on voulait les ordonnée par montant des salaire
+      }
+  }
+
+
+_______________________Resumé______________________________
+Nous avons maintenant appris comment implémenter trois types différents d'implémentations les plus populaires de Set interface
+
+- HashSet => qui est encore une fois le plus rapide mais donne un ordre imprévisible.
+- LinkedHashSet  => presque aussi rapide que le HashSet. Mais présente l'avantage supplémentaire, si vous en avez besoin, de conserver l'ordre d'insertion de vos objets.
+- TreeSet  => qui peut également filtrer, mais il le fait selon un ordre que vous pouvez définir
+   - soit en implémentant l'interface Comparable,
+   - soit en fournir un Comparator ou une lambda qui implémente la méthode compare() du Comparator.
