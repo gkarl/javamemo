@@ -1,0 +1,11 @@
+Set<IEmployee> employees = new HashSet<>(16); //
+
+Pour que HashSet élimine les doublons, la class Employee doit implémenter les methodes equals() et hashCode() et ils doivent avoir les meme fields pour travailler ensemble
+
+Meme si nous n'implementons pas les methodes equals() et hashCode() toString()... Java les fournit par default car ces methodes sont dans la super class Object dont hérite toutes les class
+
+Une bonne pratique veux que l'on override tjrs les methodes equals() et hashCode() toString() sur toutes les class crée
+
+hashCode() doit renvoyer une valeur unique si les fields choisit sont identiques (ex firstName, lastName, dob)  => c'est ce nbre qui déterminera leur index (n° de ligne) | l'implémentation par default de hashCode() ne le fait pas car on ne lui pas fournit les fields à prendre en considération il ce base sur address en mémoire ou un nbre random
+
+Qd un match est trouvé sur le nbre hashCode la méthode equals() est utilisé par java pour éliminer ces doublons

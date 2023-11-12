@@ -1,0 +1,14 @@
+List<IEmployee> employees = new ArrayList<>(16);  // instancie un ArrayList de type List interface
+=> deviens
+Set<IEmployee> employees = new HashSet<>(16);  // instancie un HashSet de type Set interface
+
+Rien ne change dans le code ces méthodes marchent tjrs : add(), size(), boucle for amélioré ...
+Si on fait un size() et print() sur ce Set on s'apperçoit de ce qui a changé
+- Qu'on a plus de doublons
+- Les éléments sont dans un ordre aléatoire car utilise un HashMap (table à 2 colonne key = hashCode(calcule math), value = élément) => un n° de ligne est attribué à chaque hashCode = index
+l'avantage de ça c'est que vérifie contains() ou remove() on a pas besoin d'itérer sur tout les élément IDE ce sert de hashCode pour retouver l'élément instantanément
+
+Il existe 3 type de SET :
+- HashSet => le plus commun car type de configuration par défaut le plus rapide.
+- LinkedHashSet
+- TriSet
