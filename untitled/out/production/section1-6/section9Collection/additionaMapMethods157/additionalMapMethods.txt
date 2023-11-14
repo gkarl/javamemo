@@ -1,0 +1,51 @@
+class Main {
+    private static Map<String, Integer> salaryMap;
+    public static void main(String[] args) {
+        salaryMap = new TreeMap<>();
+                while (peopleMat.find()) {
+                    employee = Employee.createEmployee(peopleMat.group());
+                    employees.add(employee);
+                    Employee emp = (Employee) employee;
+                    salaryMap.put(emp.lastName, emp.getSalary());
+
+_____________Methodes qu'on peut mettre sur une Map__________________
+
+- put()
+=> prend en arg1 key arg2 value, nous ajoutons essentiellement une nouvelle ligne d’une clé valeur paire à la Map
+
+- get()
+=> arg key return la value associé
+
+- values()
+=> return une liste des values de la Map (dans l'ordre définit par la Map choisit)
+
+- keySet()
+=> return un Set (car pas de doublons) de key de la Map (dans l'ordre définit par la Map choisit)
+
+- size()
+=> donne la taille de la Map, (le nombre d'entré key value paire)
+
+- entrySet()
+=> return un Set d'Entry (data type regroupe key value) si on print pas de dif avec print la Map directement mais utilisé dans une boucle for permet d'afficher (ou modifier setValue()) sur chaque ligne chaque ensemble paire clé valeur
+
+    for (Map.Entry<String, Integer> entry : salarymap.entrySet()) {
+        System.out.printf("Key = %, Value = %s%n", entry.getKey(), entry.getValue());
+    }
+
+- containsKey()
+=> prend en arg une value permet de savoir si une value est dans la Map return un boolean true ou false
+
+- getOrDefault()
+=> arg1 la key de la value recherché, arg2 ce qui est return si la key n'est pas trouvé dans la Map. Conseille de remplacer la methode get() qui plante l'appli si on lui passe une key qui n'existe pas dans la Map
+
+- isEmpty()
+=> Il vérifie s'il y a au moin une Entry (ligne à 2 colonne key value) dans la Map return true ou false
+
+- putIfAbsent()
+=> remplace put() (si c'est la meme key update avec la derniére value) putIfAbsent() maintenant qd il y a des doublons et que les values change pour ce doublons (Key) il garde sa 1er valeur il ne prend plus la derniére modif Update mais la 1ere
+
+- remove()
+=> on peut suprimer une entry de la Map, on lui passe en arg une key ça supprime une ligne entiére paire key value => ça return la value associé a cette Key, null si il trouve pas la Key
+
+- putAll()
+=> arg une autre Map avec des key value du meme type que la 1ere Map,  MapA contiendra tout ce qu'elle avait avant plus ce qu'il y a dans MapB

@@ -1,0 +1,61 @@
+
+
+1. Ecrivez un code qui vous permette de modéliser et de stocker une collection d'au moins 5 voitures
+    et de les conserver dans l'ordre dans lequel elles ont été saisies. Imprimez-les également à l'écran.
+
+2. Même chose que l'exercice 1 sauf que nous ne nous soucions pas de conserver l'ordre et que nous voulons nous assurer que les doublons n'existent pas.
+
+3. Identique à l'exercice 1 mais associez le prénom du propriétaire à chaque voiture.
+   N'ajoutez pas le nom du propriétaire à votre car model class
+    Imprimez chaque propriétaire avec sa voiture. Exemple :
+    Bob Car[make=Tesla, model=X, year=2015]
+    Jenny Car[make=Tesla, model=Y, year=2016]
+    Sarah Car[make=Tesla, model=3, year=2019]
+
+4. Si vous avez réalisé l'exercice 2 avec un record (enregistrement) (au lieu d'une classe), refaites-le en utilisant une classe ou vice-versa.
+
+5. Laissez les voitures de l'exercice 2 être imprimées dans l'ordre "naturel" par modèle.
+
+    5.1 Stocker les mêmes voitures dans une liste et les trier. (Aucune solution de code n'est fournie)
+        RQ Vous pouvez utiliser l'interface Comparable que vous avez probablement implémentée dans la classe Car
+           sur la classe de la voiture. Il suffit alors d'appeler Collections.sort(cars).
+
+    5.2 Stocker les mêmes voitures dans une Liste et les trier sans implémenter d'interfaces sur la classe Car.
+        RQ Pour cela, il n'est même pas nécessaire d'implémenter d'implémenter Comparable dans la classe Car.
+        A la place, vous pouvez appeler Collections.sort(cars, Comparator)
+        et passer soit une instance de d'un comparator en tant que deuxième paramètre de sort(),
+        soit une classe anonyme ou une expression Lambda.
+
+    5.3 Comment pouvez-vous inverser l'ordre de tri ?
+
+6. Identique à l'exercice 5 mais permet au programme de supprimer un modèle en passant le nom du modèle comme argument à la méthode main().
+    Par exemple, si vous aviez obtenu la sortie suivante au départ
+
+    Car[make=Tesla, model=3, year=2016]
+    Car[make=Tesla, model=Roadster, year=2009]
+    Car[make=Tesla, model=S, year=2014]
+    Car[make=Tesla, model=X, year=2015]
+    Car[make=Tesla, model=Y, year=2017]
+
+    Ensuite, vous modifiez le programme en suivant les instructions, vous ajoutez "Roadster" comme argument et vous le réexécutez,
+    vous obtiendrez la sortie suivante :
+
+    Car[make=Tesla, model=3, year=2016]
+    Car[make=Tesla, model=S, year=2014]
+    Car[make=Tesla, model=X, year=2015]
+    Car[make=Tesla, model=Y, year=2017]
+
+    Vous trouverez ci-dessous des instructions sur la manière de passer des arguments.
+    Java
+
+7. Quelle serait la collection la plus efficace en termes de mémoire à utiliser pour stocker des millions ou des milliards d'objets
+   dans l'ordre dans lequel ils arrivent, si vous ne savez pas exactement combien d'objets vous allez stocker à l'avance?
+   RQ J'envisagerais fortement d'utiliser une LinkedList. Tout d'abord, vous devez conserver l'ordre dans lequel ils viennent (à vous),
+      vous aurez donc besoin d'un d'un type de liste. Deuxièmement, vous avez affaire à des millions ou à des milliards.
+      ArrayList fonctionnerait MAIS il pré-attribue de gros morceaux de mémoire à chaque fois qu'il a besoin d'espace.
+      Cela peut être inefficace et gaspilleur de temporairement de la mémoire. Une liste chaînée peut croître dynamiquement de manière très efficace.
+
+
+8. Comment pourriez-vous prendre votre Collection de voitures de l'exercice 6 et les stocker dans un array de manière efficace
+
+9. Maintenant que vous connaissez les collections Java, essayez de réviser le code du jeu d'échecs des exercices de la section 8 pour utiliser des collections au lieu de array (sauf pour la représentation interne de l'échiquier).
