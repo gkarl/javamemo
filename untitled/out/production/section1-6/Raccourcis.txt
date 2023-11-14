@@ -107,7 +107,7 @@ Alt Enter  => importer une class | ou crée une Class ou une methode qui est uti
 
 Alt Insert => Ouvrir generator => constructor | getter setter | toString()
 
-Alt 1  => Open Project
+Alt 1  => Open Project, fermer la fenetre repository
 
 Alt Return <=> ou Clic sur ampoule rouge à Droite => IDE nous offre des solutions auto généré pour fixer le problème | PB place le curseur sur methode souligné en rouge pour avoir un descriptif du problème
 
