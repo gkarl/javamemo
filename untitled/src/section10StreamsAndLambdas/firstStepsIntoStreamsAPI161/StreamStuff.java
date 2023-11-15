@@ -1,10 +1,5 @@
 package section10StreamsAndLambdas.firstStepsIntoStreamsAPI161;
 
-import java.text.NumberFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Section 10: Streams & Lambdas - 161 First Steps into Streams API
  *
@@ -32,7 +27,7 @@ class StreamStuff  {
 
         peopleText
                 .lines()  // crée un Streams => découpe le multi String en ligne => output
-                .map((s) -> Employee.createEmployee(s)) // J'ai du virér \\n à la fin de la Regex pourque ça marche | map() => methode de Stream API prend 1 arg et return 1 output (IEmployee return de createEmployee()) signature interface Function | Appelé Reference Methode | écrit en Lambda  ((s) -> Employee.createEmployee(s)) RQ pas besoin d'intancier Employee pour utiliser createEmployee car static
+                .map(Employee::createEmployee) // J'ai du virér \\n à la fin de la Regex pourque ça marche | map() => methode de Stream API prend 1 arg et return 1 output (IEmployee return de createEmployee()) signature interface Function | Appelé Reference Methode | écrit en Lambda  ((s) -> Employee.createEmployee(s)) RQ pas besoin d'intancier Employee pour utiliser createEmployee car static
                 .forEach(System.out::println); // orEach() => methode de fin de pipeline pour Streams car 1 input et 0 output | écrit avec Lambda  ((s) => System.out.println(s))
     }
 }

@@ -99,6 +99,8 @@ Shift Tab => retirer de l'indentation
 
 Alt Shift  => mettre le curseur à plusieurs endroits en meme temps pour modif
 
+Alt Shift Insert => passer en mode selection colonne
+
 Alt Shift (fleche vers le haut) => déplacer une ligne vers le haut
 
 Alt Shift (fleche vers le bas) => déplacer une ligne vers le bas
