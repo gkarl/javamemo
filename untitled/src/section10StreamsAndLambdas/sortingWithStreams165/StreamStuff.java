@@ -1,17 +1,27 @@
-package section10StreamsAndLambdas.summingWithSreams164;
+package section10StreamsAndLambdas.sortingWithStreams165;
 
+
+import java.util.Comparator;
 
 /**
- * Section 10: Streams & Lambdas - 164 Summing with Streams
+ * Section 10: Streams & Lambdas - 165 Sorting with Streams
  *
- * On veut afficher la somme des salaires + voir les salaires imprimés de chaque employees grace au meme Stream
+ * Que se passerait-il si il n'y avait pas de Comparable implementé ou si nous voulions override l'ordre de tri que fait notre implémentation Comparable ?
+ *
+ * => Stream pocéde aussi des methodes de trie
+ *
+ * On veut pouvoir trier par le FirstName puis en second lieu si egalité firstName puis enfin salary
  */
-class StreamsStuff {
+class StreamStuff {
     public static void main(String[] args) {
 
         // data de base list d'employees
         // On fait volontairement une erreur sur le role d'un employee ligne 2 Programmerzzzzzzz => qd lance le program plante car on entre dans case default return nul => employee = null => Erreur car le code apres qui appel les methode toString() et getSalary() à partir d'un objet null (pointe vers rien) = Null pointer exception
-        String peopleText = """  
+        String peopleText = """
+            Flinstone, Rod, 6/2/2000, Programmer, {locpd=1000, yoe=3, iq=140}  
+            Flinstone, Rod, 6/2/2000, Programmer, {locpd=2000, yoe=3, iq=140}  
+            Flinstone, Rod, 6/2/2000, Programmer, {locpd=3000, yoe=3, iq=140}  
+            Flinstone, Rod, 6/2/2000, Programmer, {locpd=4000, yoe=3, iq=140}  
             Flinstone1, Rod, 6/2/2000, Programmer, {locpd=2000, yoe=3, iq=140}
             Flinstone2, Rod, 6/2/2000, Programmerzzzzzzz, {locpd=3000, yoe=4, iq=340}
             Flinstone3, Rod, 6/2/2000, Programmer, {locpd=4000, yoe=5, iq=120}
@@ -29,12 +39,17 @@ class StreamsStuff {
         int sum = peopleText  // on utilise une variable pour stocker la somme des salaires
                 .lines()  // crée un Streams => découpe le multi String en ligne => output
                 .map(Employee::createEmployee) // Return un type IEmployee | J'ai du virér \\n à la fin de la Regex pour que ça marche | map() => methode de Stream API prend 1 arg et return 1 output (IEmployee return de createEmployee()) signature interface Function | Appelé Reference Methode | écrit en Lambda  ((s) -> Employee.createEmployee(s)) RQ pas besoin d'intancier Employee pour utiliser createEmployee car static
+                .map(e -> (Employee)e)//*** map()  => cast IEmployee en Employee pour pouvoir accéder à ses fields
+                .sorted(Comparator.comparing(Employee::getLastName) // *** comparing() => build un Comparator pour nous veut en arg Method Reference :: | Racourci equivalent derriére le rideau à expression Lambda pour initialiser un Comparator (x,y) -> x.getLastName().compareTo(y.getLastName()
+                        .thenComparing(Employee::getFirstName) //*** thenComparing() => permet de faire comme nested si lastName égalité passe au niveau suivant compare les firstNames
+                        .thenComparing(IEmployee::getSalary) //*** Si on voulait trier par le salaire c'est facile car on avait un output du pipe supérieur de type IEmployee qui pocéde la methode getSalary | si on veut des fields de la class Employee pour faire le trie on doit cast IEmployee en Employee juste au dessus
+                        .reversed())//*** reversed() => Permet d'inverser l'ordre du trie alphabétique
                 //.mapToInt(IEmployee::getSalary) // pipe que les nbres salaires de tous les employees | Comme le pipeline haut dessus return IEmployee on doit l'utiliser ici pour accéder à la methode getSalary() | mapToInt => return un IntStream qui lui dispose de methode plus spécifique pour les nbre comme sum() RQ map() aurait return lui un Stream<Integer> | transmet plus que des nbres les salaires de chaque employee
                 .mapToInt(e -> { //  pipe que les nbres salaires de tous les employees + noms et salaires
                     System.out.println(e); // print ce qu'on avait avant la somme (noms et salaires)
                     return e.getSalary(); // il return les salaires qui vont passer au pipe suivant pour faire la somme des salaires
                 })
-                //.mapToInt(StreamsStuff::showEmpAndGetSalary) // si on avait voulu factoriser utiliser une methode qui va contenir le code de la Lambda utilisé pour le pipe du dessus
+                //.mapToInt(StreamsStuff::showEmpAndGetSalary) // si on avait voulu factoriser utiliser une methode qui va contenir le code de la Lambda utilisé pour le pipe du dessus (on remplace le pipe du dessus par ce pipe plus concis)
                 .sum(); // sum() fait la somme de tos les salaires  | C'est une Terminal Operation pour un stream pipeline on ne peut pas avoir de fct aprés | sum() => accécible que si le pipe du dessus lui passe un type IntStream comme le fait mapToInt()
                 //.forEach(System.out::println); //  | orEach() => methode de fin de pipeline pour Streams car 1 input et 0 output | écrit avec Lambda  ((s) => System.out.println(s))
 
