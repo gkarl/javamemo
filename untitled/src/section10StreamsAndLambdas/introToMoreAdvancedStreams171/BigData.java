@@ -26,7 +26,7 @@ class BigData {
         try {
             long result = Files.lines(Path.of("E:\\Udemy\\Java\\TerryMartin\\Hr5m.csv"))  // Pour importer un file qui est sur l'ordi
                     //.limit(2)  // limit() => on lui dit d'afficher que les 2 premiére lignes du Stream
-                    //.forEach(System.out::println); // print les 2 lignes
+                    //.forEach(System.out::println); // print les 2 lignes | Ctrl C les 2 ligne print + ouvre Excel + clic le coin du tableur select toute la grille + Accueil/Coller/Utiliser l'assistant importation de texte/coche le séparateur virgule => affiche un entete de colle avec 1 enregistrement sur la ligne du dessous cela permet de voire convenablement de quoi parle le file
                     .skip(1)
 
                     //___________Methode 1_________________
