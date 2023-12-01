@@ -1,28 +1,35 @@
-package section10StreamsAndLambdas.reducingWithCollect177;
+package section10StreamsAndLambdas.partitioningVsGrouping178;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 /**
- * Section 10: Streams & Lambdas - 177 Reducing with Collect
+ * Section 10: Streams & Lambdas - 178 Partitioning vs Grouping
  *
- * Vous devez utiliser BigDecimal à chaque fois que vous faite des math sur des valeur monétaire surtout si il y a des décimals (chiffre aprés la virgule) si non on n'aura pas la valeur exacte à cause des arrondis
- * On refait le stream additionner les salaires mais avec BigDecimal
+ * partitioningBy() est comme une combinaison de filter() (boolean qui répond à un Predicate true ou false pour virer les éléments qui n'y reponde pas) et un groupingBy() (regroupe toutes les Person appartenant à ce field)
+ * Ici ausi un Predicate True False mais on gardes en les regroupant par True False
+ *
+ * - On peut appliquer par dessus soit directement en arg2 une methode de Collector Ex counting() => compte les éléments dans les True et ceux dans les False
+ * - Faire des nested groupingBy() avec un decompte à l'interieur avec counting() en arg2
+ * -...
+ *
+ *
  */
 class BigData {
-    record Person(String firstName, String lastName, BigDecimal salary, String state, char gender) {} //*** On met salary en type BigDecimal à la source, on aurait pit peut etre faire un map() plustard dans le stream | On rajoute le field gender qui va nous servir pour notre 2em niveau de grouping | les Record sont essentiellement des classes avec moins de passe-partout => on a pas a définir les les getter et setter ni equals() ou hashCode() => toutes ces choses sont généré pour nous
+    record Person(String firstName, String lastName, BigDecimal salary, String state, char gender) {} // On met salary en type BigDecimal à la source, on aurait pit peut etre faire un map() plustard dans le stream | On rajoute le field gender qui va nous servir pour notre 2em niveau de grouping | les Record sont essentiellement des classes avec moins de passe-partout => on a pas a définir les les getter et setter ni equals() ou hashCode() => toutes ces choses sont généré pour nous
     public static void main(String[] args) {
         try {
 
             //__________On veut faire la somme de tous les salaire field salary dans le .csv__________________
             long startTime = System.currentTimeMillis(); // capture le temps pris en milliseconde au demarage
-            TreeMap<String, Map<Character, String>> result = Files.lines(Path.of("E:\\Udemy\\Java\\TerryMartin\\Hr5m.csv")).parallel()  //*** Change le type de la variable pour correspondre a output du stream | Pour importer un file qui est sur l'ordi | parallel() => permet de faire du multi processor en parrallele pour ganer en temps de calcule
+            Map<Boolean, Map<String, Long>> result = Files.lines(Path.of("E:\\Udemy\\Java\\TerryMartin\\Hr5m.csv")).parallel()  //*** Change le type de la variable pour correspondre a output du stream | Pour importer un file qui est sur l'ordi | parallel() => permet de faire du multi processor en parrallele pour ganer en temps de calcule
                     //Files.lines(Path.of("E:\\Udemy\\Java\\TerryMartin\\Hr5m.csv"))  // Pour importer un file qui est sur l'ordi
                     //.limit(2)  // limit() => on lui dit d'afficher que les 2 premiére lignes du Stream
                     .skip(1)
@@ -38,12 +45,13 @@ class BigData {
                     //.collect(Collectors.summingLong(sal -> sal)); // summingLong() => prend une valeur et return une valeur | Mais décide de combiner les 2 dernier pipes voire ligne suivante
                     //.collect(Collectors.summingLong(sal -> Long.parseLong(sal)));
 
+
                     //_______________Methode 2_______________________
                     //.mapToLong(sal -> Long.parseLong(sal))  // mapToLong() => pour convertir le String en long (primitif) permet de faire des opérations Maths
                     //.sum(); // sum() => fait la somme des salaires
 
                     //_______________Methode 3_______________________  // pour cette methode on n'utilise pas le pipe =>  .map(arr -> arr[25])
-                    .map(a -> new Person(a[2], a[4], new BigDecimal(a[25]), a[32], a[5].charAt(0))) //*** On map cast en BigDecimal la value String salary venant du pipe précédente String[] array |  On doit introduire le field gender à l'instanciation de Person il est à index 5 dans String array d'1 ligne | charAt(0) => on doit le cast en char car à la base ce qui arrive en input c'est un String[ ] | Pour cette methode on converti Strin[] en un Domain Models (type instance de class)
+                    .map(a -> new Person(a[2], a[4], new BigDecimal(a[25]), a[32], a[5].charAt(0))) // On map cast en BigDecimal la value String salary venant du pipe précédente String[] array |  On doit introduire le field gender à l'instanciation de Person il est à index 5 dans String array d'1 ligne | charAt(0) => on doit le cast en char car à la base ce qui arrive en input c'est un String[ ] | Pour cette methode on converti Strin[] en un Domain Models (type instance de class)
                     //.collect(Collectors.summingLong(Person::salary)); // on utilise la methode 1 mais en arg on peut lui mettre un Model Reference :: salary field fait référence derriere le rideau a getSalary()
 
                     //_______________ Methode 1 On veut regrouper les Person par state (état)__________________
@@ -73,13 +81,27 @@ class BigData {
 
                     //_______________ Methode 4 Rajouter un 2em niveau de groupage par gender => somme des salaires par sexe dans un state __________________
                     //.collect(Collectors.groupingBy(Person::state, TreeMap::new,
-                           //Collectors.groupingBy(Person::gender, Collectors.collectingAndThen(Collectors.summingLong(BigData.Person::salary), NumberFormat.getCurrencyInstance()::format)))); //*** nested groupingBy() arg1 le field sur lequel grouper arg2 apération + formatage (qui était arg3 du 1er groupingBy()) |** à la place de summingLong on peut faire toutes les methodes de la class Collectors Ex averagingLong() +> fait la moyenne des salaires  | idem à methode précédente mais on utilise une Methode Reference :: plutot qu'une Lambda FVM comprend que c'est le output de l'autre opération qui arrive en input de la 2em opération | En arg3 on peut utiliser n'importe quel methode de la class Collectors
+                    //Collectors.groupingBy(Person::gender, Collectors.collectingAndThen(Collectors.summingLong(BigData.Person::salary), NumberFormat.getCurrencyInstance()::format)))); //*** nested groupingBy() arg1 le field sur lequel grouper arg2 apération + formatage (qui était arg3 du 1er groupingBy()) |** à la place de summingLong on peut faire toutes les methodes de la class Collectors Ex averagingLong() +> fait la moyenne des salaires  | idem à methode précédente mais on utilise une Methode Reference :: plutot qu'une Lambda FVM comprend que c'est le output de l'autre opération qui arrive en input de la 2em opération | En arg3 on peut utiliser n'importe quel methode de la class Collectors
 
-                    //_______________*** Methode 5 faire la somme des salaires mais en type BigDecimal pour plus de précision si on a des decimal __________________
-                    .collect(Collectors.groupingBy(Person::state, TreeMap::new,
-                        Collectors.groupingBy(Person::gender, Collectors.collectingAndThen(
-                                Collectors.reducing(BigDecimal.ZERO, Person::salary, (a,b) -> a.add(b)), //*** reducing() => Collectors n'a pas toujours le methode toute préte on utilise cette methode pour fabriquer nos propres récursive opération | on a choisit la version a 3 arg | arg1 identy nbre on le met à 0 pour une addition pour que le 1er stream concerve ça valeur (0+a=a=) | Function build mapping Person en salary grace à Model Reference :: | arg3 BinaryOperator => une Lambda qui prenne 2 valeurs pour nous permettre de faire une opération
-                                NumberFormat.getCurrencyInstance()::format))));
+                    //_______________ Methode 5 faire la somme des salaires mais en type BigDecimal pour plus de précision si on a des decimal __________________
+                    /*.collect(Collectors.groupingBy(Person::state, TreeMap::new,
+                            Collectors.groupingBy(Person::gender, Collectors.collectingAndThen(
+                                    Collectors.reducing(BigDecimal.ZERO, Person::salary, (a, b) -> a.add(b)), //*** reducing() => Collectors n'a pas toujours le methode toute préte on utilise cette methode pour fabriquer nos propres récursive opération | on a choisit la version a 3 arg | arg1 identy nbre on le met à 0 pour une addition pour que le 1er stream concerve ça valeur (0+a=a=) | Function build mapping Person en salary grace à Model Reference :: | arg3 BinaryOperator => une Lambda qui prenne 2 valeurs pour nous permettre de faire une opération
+                                    NumberFormat.getCurrencyInstance()::format))));*/
+
+                    //_______________*** Methode 6 filtrer éliminer les hommes __________________
+                    //.filter(person -> person.gender()=='F'); // sorte de boolean opération Soit vous avez une correspondance, soit vous n'avez pas de correspondance le stream vire les Hommes
+
+                    //_______________*** Methode 7 faire Map key true si c'est une Femme et value Person __________________
+                    //.collect(Collectors.partitioningBy(p -> p.gender() == 'F'));  // partitioningBy() => prend en arg un Predicate ( c'est une interface qui prend 1 input arg (Lambda ou Model Reference) et return un boolean (true ou false)) et return un Map (key = match ou pas le prédicate true ou false | value = liste des Person
+
+                    //_______________*** Methode 8 Savoir combien d'Hommes et combiens de Femmes il y a __________________
+                    //.collect(Collectors.partitioningBy(p -> p.gender() == 'F', Collectors.counting()));// counting() => Nous allons simplement compter le nombre total d'éléments du Stream par partition ou grouping
+
+                    //_______________*** Methode 9 on fait un regroupement des hommes et des femmes pour savoir combien ils y en a dans chaque état __________________
+                    .collect(Collectors.partitioningBy(p -> p.gender() == 'F',  // partitioningBy() => fait un 1er groupe H/F | prend en arg un Predicate ( c'est une interface qui prend 1 input arg (Lambda ou Model Reference) et return un boolean (true ou false)) et return un Map (key = match ou pas le prédicate true ou false | value = liste des Person
+                            Collectors.groupingBy(Person::state, Collectors.counting()))); // groupingBy() => est nested ça fait un regroupement secondaire on compte le nbre de Person par state | ici on a mis counting() comme arg2 mais on pourrais mettre une autres fct de la class Collector
+
 
             System.out.println(result); //***
             long endTime = System.currentTimeMillis(); // capture le temps pris en milliseconde a la fin du calcule de la somme
