@@ -48,7 +48,7 @@ Ctrl B  => clic sur un objet pour Naviguer la ou l'objet a été initialisé
 
 Ctrl P  => character info il faut placer le curseur entre les parentheses d'1 methode ou sur la methode, affiche les différentes versions de la methode avec leurs signatures (input + output)
 
-Ctrl Q  => afficher la javaDoc
+Ctrl Q  => afficher la javaDoc ou F1
 
 Ctrl Space => place le curseur après un point (class.) pour afficher les methode disponible dans cette class | puis si on a déja mis une methode écrite en déplaçant le curseur à la fin de son nom affiche input/output (return) attendu pour cette methode => permet de résoudre des erreurs de typage parfois (si la methode est un input (arg) d'une autre méthode checker aussi la compatibilité avec output de cette methode en arg)
 
