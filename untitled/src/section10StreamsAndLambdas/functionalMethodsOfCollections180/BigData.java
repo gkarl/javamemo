@@ -154,7 +154,7 @@ class BigData {
                 //.forEach(a -> stateCounts.merge(a[32], 1L, (x,y) -> x + y)); // Juste pour pas planter le Stream du Map | 32 c'est l'index de state dans String[] array | arg2 1L si cette key est deja dans la Map mais que sa value est null ça remplace ce null par cette value 1 (Nbre de Person) |Expression Lambda => va passer en arg1 x la oldValue va additionner a
             //List.of("cat", "dog").replaceAll(String::toUpperCase);
 
-            //_______________*** Methode 14 removeIf() avec List (Collection) on veut retirer toute entré qui commence avec la Lettre "c" de cette List __________________
+            //_______________*** Methode 15 removeIf() avec List (Collection) on veut retirer toute entré qui commence avec la Lettre "c" de cette List __________________
                 //.forEach(a -> stateCounts.merge(a[32], 1L, (x,y) -> x + y)); // Juste pour pas planter le Stream du Map | 32 c'est l'index de state dans String[] array | arg2 1L si cette key est deja dans la Map mais que sa value est null ça remplace ce null par cette value 1 (Nbre de Person) |Expression Lambda => va passer en arg1 x la oldValue va additionner a
             //ArrayList animals = new ArrayList(Collections.singleton(List.of("cat", "dog").removeIf(w -> w.startsWith("c")))); // Erreur Pb Immutabilité | List.of() renvoie une unmodifiable List ce qui veut dire qu'elle ne peut pas etre changé => erreur => cast en ArrayList
             //System.out.println(animals);
