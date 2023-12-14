@@ -86,6 +86,8 @@ Ctrl Alt N  => défait la factorisation (place le curseur sur l'utilisation de l
 
 Ctrl Alt T  => Mettre une selection de code dans un bloc if | else if | while | for | try/catch | try/finally | synchronized | Runnable ...
 
+Ctrl Alt P  => fait qu'une variable local à une methode soit en paramétre de cette methode
+
 Ctrl Alt O  => clean les imports non utilisés
 
 Ctrl Alt Enter => Commencer une nell ligne au-dessus de la ou est le curseur
